@@ -7,25 +7,94 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BE4A69B214AEDF6D225E1C4 /* libPods-Photo&Camera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E3A0FE2AC5E05A41CAF23C /* libPods-Photo&Camera.a */; };
 		A9088DA31DC8991600430CAC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9088DA21DC8991600430CAC /* main.m */; };
 		A9088DA61DC8991600430CAC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9088DA51DC8991600430CAC /* AppDelegate.m */; };
-		A9088DA91DC8991600430CAC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9088DA81DC8991600430CAC /* ViewController.m */; };
 		A9088DAC1DC8991600430CAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9088DAA1DC8991600430CAC /* Main.storyboard */; };
 		A9088DAE1DC8991600430CAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9088DAD1DC8991600430CAC /* Assets.xcassets */; };
 		A9088DB11DC8991600430CAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9088DAF1DC8991600430CAC /* LaunchScreen.storyboard */; };
+		A9088DBB1DC8A38C00430CAC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9088DB91DC8A38C00430CAC /* AVFoundation.framework */; };
+		A9088DBC1DC8A38C00430CAC /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9088DBA1DC8A38C00430CAC /* AVKit.framework */; };
+		A9088DBF1DC9CDD800430CAC /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = A9088DBE1DC9CDD800430CAC /* Photo.m */; };
+		A9088DC21DC9CDE100430CAC /* Camera.m in Sources */ = {isa = PBXBuildFile; fileRef = A9088DC11DC9CDE100430CAC /* Camera.m */; };
+		A93596381DD1DA2400ABE175 /* CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = A93596371DD1DA2400ABE175 /* CameraView.m */; };
+		A961E3861DF1A7FA00EBDD10 /* PhotoPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A961E3851DF1A7FA00EBDD10 /* PhotoPickerViewController.m */; };
+		A9A3E13B1DC9D31F0009CBC6 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A3E1391DC9D31F0009CBC6 /* Photos.framework */; };
+		A9A3E13C1DC9D31F0009CBC6 /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A3E13A1DC9D31F0009CBC6 /* PhotosUI.framework */; };
+		A9A3E1421DC9D5AB0009CBC6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A3E1411DC9D5AB0009CBC6 /* HomeViewController.m */; };
+		A9A3E1451DC9D73B0009CBC6 /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A3E1441DC9D73B0009CBC6 /* test.m */; };
+		A9B501B91E2CFD6A0081F0F2 /* PhotoMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B501B81E2CFD6A0081F0F2 /* PhotoMapViewController.m */; };
+		A9BB5E7B1E013A6400BE5443 /* VideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BB5E7A1E013A6400BE5443 /* VideoPlayer.m */; };
+		A9C2193D1E2F671D00248D8C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C2193C1E2F671D00248D8C /* MapKit.framework */; };
+		A9C219401E2F685500248D8C /* PhotoMapAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C2193F1E2F685500248D8C /* PhotoMapAnnotationView.m */; };
+		A9C219461E2FE9B100248D8C /* VideoPause.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C219441E2FE9B100248D8C /* VideoPause.png */; };
+		A9C219471E2FE9B100248D8C /* VideoPlayer.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C219451E2FE9B100248D8C /* VideoPlayer.png */; };
+		A9D01DC11DE2FD2C00675E23 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D01DC01DE2FD2C00675E23 /* Button.m */; };
+		A9D01DC41DE2FD4500675E23 /* Define.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D01DC31DE2FD4500675E23 /* Define.m */; };
+		A9D01DCB1DE4B61D00675E23 /* CameraDelegateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D01DCA1DE4B61D00675E23 /* CameraDelegateManager.m */; };
+		A9D032131E27914100CAB134 /* PhotoPreviewCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D032101E27914100CAB134 /* PhotoPreviewCollectionViewCell.m */; };
+		A9D032141E27914100CAB134 /* PhotoPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D032121E27914100CAB134 /* PhotoPreviewViewController.m */; };
+		A9EF47221DF40E1700054129 /* AlbumTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EF47211DF40E1700054129 /* AlbumTableViewCell.m */; };
+		A9EF47251DF40E3300054129 /* AlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EF47241DF40E3300054129 /* AlbumTableViewController.m */; };
+		A9EF47281DF417D700054129 /* AssetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EF47271DF417D700054129 /* AssetModel.m */; };
+		A9FCB3731DF5CD1900896424 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FCB3721DF5CD1900896424 /* PhotoCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30E3A0FE2AC5E05A41CAF23C /* libPods-Photo&Camera.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Photo&Camera.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		58937F6C2A9F1754007BA1CD /* Pods-Photo&Camera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photo&Camera.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Photo&Camera/Pods-Photo&Camera.debug.xcconfig"; sourceTree = "<group>"; };
+		6688AA85AE2C21E60B2D9D6F /* Pods-Photo&Camera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photo&Camera.release.xcconfig"; path = "Pods/Target Support Files/Pods-Photo&Camera/Pods-Photo&Camera.release.xcconfig"; sourceTree = "<group>"; };
 		A9088D9E1DC8991600430CAC /* Photo&Camera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo&Camera.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9088DA21DC8991600430CAC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A9088DA41DC8991600430CAC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A9088DA51DC8991600430CAC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A9088DA71DC8991600430CAC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A9088DA81DC8991600430CAC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A9088DAB1DC8991600430CAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A9088DAD1DC8991600430CAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9088DB01DC8991600430CAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9088DB21DC8991600430CAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9088DB91DC8A38C00430CAC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A9088DBA1DC8A38C00430CAC /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		A9088DBD1DC9CDD800430CAC /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		A9088DBE1DC9CDD800430CAC /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		A9088DC01DC9CDE100430CAC /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		A9088DC11DC9CDE100430CAC /* Camera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Camera.m; sourceTree = "<group>"; };
+		A93596361DD1DA2400ABE175 /* CameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraView.h; sourceTree = "<group>"; };
+		A93596371DD1DA2400ABE175 /* CameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraView.m; sourceTree = "<group>"; };
+		A961E3841DF1A7FA00EBDD10 /* PhotoPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoPickerViewController.h; sourceTree = "<group>"; };
+		A961E3851DF1A7FA00EBDD10 /* PhotoPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoPickerViewController.m; sourceTree = "<group>"; };
+		A9A3E1391DC9D31F0009CBC6 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		A9A3E13A1DC9D31F0009CBC6 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
+		A9A3E1401DC9D5AB0009CBC6 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		A9A3E1411DC9D5AB0009CBC6 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		A9A3E1431DC9D73B0009CBC6 /* test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test.h; sourceTree = "<group>"; };
+		A9A3E1441DC9D73B0009CBC6 /* test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
+		A9B501B71E2CFD6A0081F0F2 /* PhotoMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoMapViewController.h; sourceTree = "<group>"; };
+		A9B501B81E2CFD6A0081F0F2 /* PhotoMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoMapViewController.m; sourceTree = "<group>"; };
+		A9BB5E791E013A6400BE5443 /* VideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayer.h; sourceTree = "<group>"; };
+		A9BB5E7A1E013A6400BE5443 /* VideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayer.m; sourceTree = "<group>"; };
+		A9C2193C1E2F671D00248D8C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A9C2193E1E2F685500248D8C /* PhotoMapAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoMapAnnotationView.h; sourceTree = "<group>"; };
+		A9C2193F1E2F685500248D8C /* PhotoMapAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoMapAnnotationView.m; sourceTree = "<group>"; };
+		A9C219441E2FE9B100248D8C /* VideoPause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VideoPause.png; sourceTree = "<group>"; };
+		A9C219451E2FE9B100248D8C /* VideoPlayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VideoPlayer.png; sourceTree = "<group>"; };
+		A9D01DBF1DE2FD2C00675E23 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
+		A9D01DC01DE2FD2C00675E23 /* Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Button.m; sourceTree = "<group>"; };
+		A9D01DC21DE2FD4500675E23 /* Define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		A9D01DC31DE2FD4500675E23 /* Define.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Define.m; sourceTree = "<group>"; };
+		A9D01DC91DE4B61D00675E23 /* CameraDelegateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraDelegateManager.h; sourceTree = "<group>"; };
+		A9D01DCA1DE4B61D00675E23 /* CameraDelegateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraDelegateManager.m; sourceTree = "<group>"; };
+		A9D0320F1E27914100CAB134 /* PhotoPreviewCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoPreviewCollectionViewCell.h; sourceTree = "<group>"; };
+		A9D032101E27914100CAB134 /* PhotoPreviewCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoPreviewCollectionViewCell.m; sourceTree = "<group>"; };
+		A9D032111E27914100CAB134 /* PhotoPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoPreviewViewController.h; sourceTree = "<group>"; };
+		A9D032121E27914100CAB134 /* PhotoPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoPreviewViewController.m; sourceTree = "<group>"; };
+		A9EF47201DF40E1700054129 /* AlbumTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumTableViewCell.h; sourceTree = "<group>"; };
+		A9EF47211DF40E1700054129 /* AlbumTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumTableViewCell.m; sourceTree = "<group>"; };
+		A9EF47231DF40E3300054129 /* AlbumTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumTableViewController.h; sourceTree = "<group>"; };
+		A9EF47241DF40E3300054129 /* AlbumTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumTableViewController.m; sourceTree = "<group>"; };
+		A9EF47261DF417D700054129 /* AssetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetModel.h; sourceTree = "<group>"; };
+		A9EF47271DF417D700054129 /* AssetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetModel.m; sourceTree = "<group>"; };
+		A9FCB3711DF5CD1900896424 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		A9FCB3721DF5CD1900896424 /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +102,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9C2193D1E2F671D00248D8C /* MapKit.framework in Frameworks */,
+				A9A3E13B1DC9D31F0009CBC6 /* Photos.framework in Frameworks */,
+				A9A3E13C1DC9D31F0009CBC6 /* PhotosUI.framework in Frameworks */,
+				A9088DBB1DC8A38C00430CAC /* AVFoundation.framework in Frameworks */,
+				A9088DBC1DC8A38C00430CAC /* AVKit.framework in Frameworks */,
+				3BE4A69B214AEDF6D225E1C4 /* libPods-Photo&Camera.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0029FA79779CEEFF34674452 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				58937F6C2A9F1754007BA1CD /* Pods-Photo&Camera.debug.xcconfig */,
+				6688AA85AE2C21E60B2D9D6F /* Pods-Photo&Camera.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A9088D951DC8991600430CAC = {
 			isa = PBXGroup;
 			children = (
 				A9088DA01DC8991600430CAC /* Photo&Camera */,
 				A9088D9F1DC8991600430CAC /* Products */,
+				A9088DB81DC8A38C00430CAC /* Frameworks */,
+				0029FA79779CEEFF34674452 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,10 +146,18 @@
 			children = (
 				A9088DA41DC8991600430CAC /* AppDelegate.h */,
 				A9088DA51DC8991600430CAC /* AppDelegate.m */,
-				A9088DA71DC8991600430CAC /* ViewController.h */,
-				A9088DA81DC8991600430CAC /* ViewController.m */,
+				A9A3E1401DC9D5AB0009CBC6 /* HomeViewController.h */,
+				A9A3E1411DC9D5AB0009CBC6 /* HomeViewController.m */,
+				A9D01DC51DE2FD6200675E23 /* UI */,
+				A935963A1DD3018300ABE175 /* Photo */,
+				A9C2193B1E2F5A8E00248D8C /* Map */,
+				A93596391DD3017900ABE175 /* Camera */,
+				A9A3E1431DC9D73B0009CBC6 /* test.h */,
+				A9A3E1441DC9D73B0009CBC6 /* test.m */,
 				A9088DAA1DC8991600430CAC /* Main.storyboard */,
 				A9088DAD1DC8991600430CAC /* Assets.xcassets */,
+				A9C219441E2FE9B100248D8C /* VideoPause.png */,
+				A9C219451E2FE9B100248D8C /* VideoPlayer.png */,
 				A9088DAF1DC8991600430CAC /* LaunchScreen.storyboard */,
 				A9088DB21DC8991600430CAC /* Info.plist */,
 				A9088DA11DC8991600430CAC /* Supporting Files */,
@@ -79,6 +173,79 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A9088DB81DC8A38C00430CAC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A9C2193C1E2F671D00248D8C /* MapKit.framework */,
+				A9A3E1391DC9D31F0009CBC6 /* Photos.framework */,
+				A9A3E13A1DC9D31F0009CBC6 /* PhotosUI.framework */,
+				A9088DB91DC8A38C00430CAC /* AVFoundation.framework */,
+				A9088DBA1DC8A38C00430CAC /* AVKit.framework */,
+				30E3A0FE2AC5E05A41CAF23C /* libPods-Photo&Camera.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A93596391DD3017900ABE175 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				A93596361DD1DA2400ABE175 /* CameraView.h */,
+				A93596371DD1DA2400ABE175 /* CameraView.m */,
+				A9088DC01DC9CDE100430CAC /* Camera.h */,
+				A9088DC11DC9CDE100430CAC /* Camera.m */,
+				A9D01DC91DE4B61D00675E23 /* CameraDelegateManager.h */,
+				A9D01DCA1DE4B61D00675E23 /* CameraDelegateManager.m */,
+			);
+			name = Camera;
+			sourceTree = "<group>";
+		};
+		A935963A1DD3018300ABE175 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				A9088DBD1DC9CDD800430CAC /* Photo.h */,
+				A9088DBE1DC9CDD800430CAC /* Photo.m */,
+				A9BB5E791E013A6400BE5443 /* VideoPlayer.h */,
+				A9BB5E7A1E013A6400BE5443 /* VideoPlayer.m */,
+				A9EF47261DF417D700054129 /* AssetModel.h */,
+				A9EF47271DF417D700054129 /* AssetModel.m */,
+				A9EF47231DF40E3300054129 /* AlbumTableViewController.h */,
+				A9EF47241DF40E3300054129 /* AlbumTableViewController.m */,
+				A9EF47201DF40E1700054129 /* AlbumTableViewCell.h */,
+				A9EF47211DF40E1700054129 /* AlbumTableViewCell.m */,
+				A961E3841DF1A7FA00EBDD10 /* PhotoPickerViewController.h */,
+				A961E3851DF1A7FA00EBDD10 /* PhotoPickerViewController.m */,
+				A9FCB3711DF5CD1900896424 /* PhotoCollectionViewCell.h */,
+				A9FCB3721DF5CD1900896424 /* PhotoCollectionViewCell.m */,
+				A9D032111E27914100CAB134 /* PhotoPreviewViewController.h */,
+				A9D032121E27914100CAB134 /* PhotoPreviewViewController.m */,
+				A9D0320F1E27914100CAB134 /* PhotoPreviewCollectionViewCell.h */,
+				A9D032101E27914100CAB134 /* PhotoPreviewCollectionViewCell.m */,
+			);
+			name = Photo;
+			sourceTree = "<group>";
+		};
+		A9C2193B1E2F5A8E00248D8C /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				A9C2193E1E2F685500248D8C /* PhotoMapAnnotationView.h */,
+				A9C2193F1E2F685500248D8C /* PhotoMapAnnotationView.m */,
+				A9B501B71E2CFD6A0081F0F2 /* PhotoMapViewController.h */,
+				A9B501B81E2CFD6A0081F0F2 /* PhotoMapViewController.m */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		A9D01DC51DE2FD6200675E23 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A9D01DBF1DE2FD2C00675E23 /* Button.h */,
+				A9D01DC01DE2FD2C00675E23 /* Button.m */,
+				A9D01DC21DE2FD4500675E23 /* Define.h */,
+				A9D01DC31DE2FD4500675E23 /* Define.m */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +253,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9088DB51DC8991600430CAC /* Build configuration list for PBXNativeTarget "Photo&Camera" */;
 			buildPhases = (
+				CAF863233FC8EFAD4AF64CDB /* [CP] Check Pods Manifest.lock */,
 				A9088D9A1DC8991600430CAC /* Sources */,
 				A9088D9B1DC8991600430CAC /* Frameworks */,
 				A9088D9C1DC8991600430CAC /* Resources */,
+				1DB5CA70E456AF2A66D22D02 /* [CP] Embed Pods Frameworks */,
+				51DFC995A5526725526FDDFC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -105,7 +275,7 @@
 		A9088D961DC8991600430CAC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "何家瑋";
 				TargetAttributes = {
 					A9088D9D1DC8991600430CAC = {
@@ -140,19 +310,86 @@
 			files = (
 				A9088DB11DC8991600430CAC /* LaunchScreen.storyboard in Resources */,
 				A9088DAE1DC8991600430CAC /* Assets.xcassets in Resources */,
+				A9C219461E2FE9B100248D8C /* VideoPause.png in Resources */,
+				A9C219471E2FE9B100248D8C /* VideoPlayer.png in Resources */,
 				A9088DAC1DC8991600430CAC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1DB5CA70E456AF2A66D22D02 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Photo&Camera/Pods-Photo&Camera-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51DFC995A5526725526FDDFC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Photo&Camera/Pods-Photo&Camera-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CAF863233FC8EFAD4AF64CDB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A9088D9A1DC8991600430CAC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9088DA91DC8991600430CAC /* ViewController.m in Sources */,
+				A9A3E1451DC9D73B0009CBC6 /* test.m in Sources */,
+				A9088DBF1DC9CDD800430CAC /* Photo.m in Sources */,
+				A9BB5E7B1E013A6400BE5443 /* VideoPlayer.m in Sources */,
+				A9D01DCB1DE4B61D00675E23 /* CameraDelegateManager.m in Sources */,
+				A9088DC21DC9CDE100430CAC /* Camera.m in Sources */,
+				A9EF47251DF40E3300054129 /* AlbumTableViewController.m in Sources */,
+				A961E3861DF1A7FA00EBDD10 /* PhotoPickerViewController.m in Sources */,
+				A9B501B91E2CFD6A0081F0F2 /* PhotoMapViewController.m in Sources */,
+				A9D032131E27914100CAB134 /* PhotoPreviewCollectionViewCell.m in Sources */,
+				A9D032141E27914100CAB134 /* PhotoPreviewViewController.m in Sources */,
+				A9C219401E2F685500248D8C /* PhotoMapAnnotationView.m in Sources */,
+				A93596381DD1DA2400ABE175 /* CameraView.m in Sources */,
+				A9D01DC41DE2FD4500675E23 /* Define.m in Sources */,
+				A9EF47221DF40E1700054129 /* AlbumTableViewCell.m in Sources */,
 				A9088DA61DC8991600430CAC /* AppDelegate.m in Sources */,
+				A9EF47281DF417D700054129 /* AssetModel.m in Sources */,
+				A9A3E1421DC9D5AB0009CBC6 /* HomeViewController.m in Sources */,
+				A9D01DC11DE2FD2C00675E23 /* Button.m in Sources */,
+				A9FCB3731DF5CD1900896424 /* PhotoCollectionViewCell.m in Sources */,
 				A9088DA31DC8991600430CAC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,6 +434,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -245,6 +483,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -271,10 +510,12 @@
 		};
 		A9088DB61DC8991600430CAC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58937F6C2A9F1754007BA1CD /* Pods-Photo&Camera.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7RMCG6LBC4;
 				INFOPLIST_FILE = "Photo&Camera/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "chiawei.Photo-Camera";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -283,10 +524,12 @@
 		};
 		A9088DB71DC8991600430CAC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6688AA85AE2C21E60B2D9D6F /* Pods-Photo&Camera.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7RMCG6LBC4;
 				INFOPLIST_FILE = "Photo&Camera/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "chiawei.Photo-Camera";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -312,6 +555,7 @@
 				A9088DB71DC8991600430CAC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
