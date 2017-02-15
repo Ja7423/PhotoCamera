@@ -16,7 +16,6 @@
         UICollectionView * _collectionView;
         UICollectionViewFlowLayout *_layout;
         UIToolbar * _toolBar;
-        NSInteger didSelectedCellIndexPath;
         
         BOOL _navigationBarIsHidden;
         BOOL _needUpdateData;
@@ -76,9 +75,6 @@
 - (void)viewDidLayoutSubviews
 {
         [super viewDidLayoutSubviews];
-        
-        // when dismiss AVPlayerViewController, collection view won't scroll to posiion bottom automatically
-//        [_collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:didSelectedCellIndexPath inSection:0] atScrollPosition:UICollectionViewScrollPositionBottom animated:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -144,7 +140,6 @@
 {
         typeof(self) __weak weakSelf = self;
         
-        didSelectedCellIndexPath = sender.tag;
         AssetModel *model = [_dataSourceModel dataAtIndex:sender.tag];
         _videoPlayer = [VideoPlayer videoPlayerWithAsset:model.asset];
         [_videoPlayer getPlayerViewController:^(AVPlayerViewController *_avPlayerViewController) {

@@ -15,19 +15,7 @@
 
 @end
 
-//static DataSourceModel * _dataSourceModel = nil;
-
 @implementation DataSourceModel
-
-//+ (instancetype)defaultModel
-//{
-//        if (!_dataSourceModel)
-//        {
-//                _dataSourceModel = [[DataSourceModel alloc]init];
-//        }
-//        
-//        return _dataSourceModel;
-//}
 
 - (instancetype)init
 {
@@ -36,7 +24,6 @@
         if (self)
         {
                 _photo = [[Photo alloc]init];
-//                _photoLibraryDidChange = NO;
         }
         
         return self;
@@ -45,11 +32,6 @@
 - (void)startLinkPhotoLibrary
 {
         _photoData = [NSMutableArray arrayWithArray:[_photo getAlbumList]];
-        
-//        if (_dataSource && [_dataSource respondsToSelector:@selector(dataSourceModel:Data:)])
-//        {
-//                [_dataSource dataSourceModel:self Data:_photoData];
-//        }
 }
 
 - (void)needUpdateData:(BOOL)update
@@ -68,14 +50,6 @@
                 _photoData = [NSMutableArray arrayWithArray:photosAsset];
                 
         }];
-}
-
-- (void)needUpdateFetchResultData:(BOOL)update
-{
-        if (update && _delegate && [_delegate respondsToSelector:@selector(dataSourceModelDidChange:)])
-        {
-                [_delegate dataSourceModelDidChange:self];
-        }
 }
 
 - (void)deletePhoto:(NSArray *)deleteAssets completion:(void (^) (BOOL success, NSError * error))completion

@@ -8,7 +8,7 @@
 
 #import "PhotoPickerViewController.h"
 
-@interface PhotoPickerViewController () <UICollectionViewDataSource, UICollectionViewDelegate, DataSourceModelDelegate, DataSourceManager>
+@interface PhotoPickerViewController () <UICollectionViewDataSource, UICollectionViewDelegate, DataSourceModelDelegate>
 {
         DataSourceModel * _dataSourceModel;
         

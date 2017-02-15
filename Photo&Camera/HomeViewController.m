@@ -11,7 +11,6 @@
 @interface HomeViewController ()
 {
         CameraView * _cameraview;
-        Photo * _photo;
 }
 
 @end
@@ -22,7 +21,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
         
-//        [Photo CheckPhotoisAvailable];
+        [Photo CheckPhotoisAvailable];
         
         
 }

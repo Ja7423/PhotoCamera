@@ -22,7 +22,6 @@
 		A9A3E13B1DC9D31F0009CBC6 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A3E1391DC9D31F0009CBC6 /* Photos.framework */; };
 		A9A3E13C1DC9D31F0009CBC6 /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A3E13A1DC9D31F0009CBC6 /* PhotosUI.framework */; };
 		A9A3E1421DC9D5AB0009CBC6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A3E1411DC9D5AB0009CBC6 /* HomeViewController.m */; };
-		A9A3E1451DC9D73B0009CBC6 /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A3E1441DC9D73B0009CBC6 /* test.m */; };
 		A9B501B91E2CFD6A0081F0F2 /* PhotoMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B501B81E2CFD6A0081F0F2 /* PhotoMapViewController.m */; };
 		A9BB5E7B1E013A6400BE5443 /* VideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BB5E7A1E013A6400BE5443 /* VideoPlayer.m */; };
 		A9C2193D1E2F671D00248D8C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C2193C1E2F671D00248D8C /* MapKit.framework */; };
@@ -68,8 +67,6 @@
 		A9A3E13A1DC9D31F0009CBC6 /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
 		A9A3E1401DC9D5AB0009CBC6 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		A9A3E1411DC9D5AB0009CBC6 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		A9A3E1431DC9D73B0009CBC6 /* test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test.h; sourceTree = "<group>"; };
-		A9A3E1441DC9D73B0009CBC6 /* test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
 		A9B501B71E2CFD6A0081F0F2 /* PhotoMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoMapViewController.h; sourceTree = "<group>"; };
 		A9B501B81E2CFD6A0081F0F2 /* PhotoMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoMapViewController.m; sourceTree = "<group>"; };
 		A9BB5E791E013A6400BE5443 /* VideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayer.h; sourceTree = "<group>"; };
@@ -158,8 +155,6 @@
 				A935963A1DD3018300ABE175 /* Photo */,
 				A9C2193B1E2F5A8E00248D8C /* Map */,
 				A93596391DD3017900ABE175 /* Camera */,
-				A9A3E1431DC9D73B0009CBC6 /* test.h */,
-				A9A3E1441DC9D73B0009CBC6 /* test.m */,
 				A9088DAA1DC8991600430CAC /* Main.storyboard */,
 				A9088DAD1DC8991600430CAC /* Assets.xcassets */,
 				A9C219441E2FE9B100248D8C /* VideoPause.png */,
@@ -380,7 +375,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9A3E1451DC9D73B0009CBC6 /* test.m in Sources */,
 				A9088DBF1DC9CDD800430CAC /* Photo.m in Sources */,
 				A9BB5E7B1E013A6400BE5443 /* VideoPlayer.m in Sources */,
 				A9D01DCB1DE4B61D00675E23 /* CameraDelegateManager.m in Sources */,

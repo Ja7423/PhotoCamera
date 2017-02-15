@@ -55,17 +55,13 @@ static Camera * _camera = nil;
         
         switch (Status) {
                 case AVAuthorizationStatusNotDetermined:
-                        NSLog(@"AVAuthorizationStatusNotDetermined");
                         [self RequestCameraPermission];
                         break;
                 case AVAuthorizationStatusRestricted:
-                        NSLog(@"AVAuthorizationStatusRestricted");
                         break;
                 case AVAuthorizationStatusDenied:
-                        NSLog(@"AVAuthorizationStatusDenied");
                         break;
                 case AVAuthorizationStatusAuthorized:
-                        NSLog(@"AVAuthorizationStatusAuthorized");
                         break;
                 default:
                         break;

@@ -19,23 +19,12 @@
 @end
 
 
-@class DataSourceModel;
-@protocol DataSourceManager <NSObject>
-
-@optional
-- (void)dataSourceModel:(DataSourceModel *)dataSourceModel Data:(NSArray *)data;
-
-@end
-
-
 @interface DataSourceModel : NSObject
-
 
 - (void)startLinkPhotoLibrary;
 - (void)needUpdateData:(BOOL)update;
 
 - (void)requestFetchResult:(PHFetchResult *)fetchResult;
-- (void)needUpdateFetchResultData:(BOOL)update;
 
 - (void)deletePhoto:(NSArray *)deleteAssets completion:(void (^) (BOOL success, NSError * error))completion;
 

@@ -10,7 +10,7 @@
 
 
 
-@interface AlbumTableViewController () <UITableViewDelegate, DataSourceModelDelegate, DataSourceManager>
+@interface AlbumTableViewController () <UITableViewDelegate, DataSourceModelDelegate>
 {
         DataSourceModel * _dataSourceModel;
         
