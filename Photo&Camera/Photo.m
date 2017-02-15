@@ -73,7 +73,6 @@
                         FetchResultModel *_FetchResultModel = [[FetchResultModel alloc]init];
                         _FetchResultModel.albumName = assetCollection.localizedTitle;
                         _FetchResultModel.result = assetResult;
-                        _FetchResultModel.count = assetResult.count;
                         
                         [albumList addObject:_FetchResultModel];
                 }
@@ -88,7 +87,6 @@
                 FetchResultModel *_FetchResultModel = [[FetchResultModel alloc]init];
                 _FetchResultModel.albumName = assetCollection.localizedTitle;
                 _FetchResultModel.result = assetResult;
-                _FetchResultModel.count = assetResult.count;
                 
                 [albumList addObject:_FetchResultModel];
         }
@@ -96,9 +94,9 @@
         return albumList;
 }
 
-- (void)getAlbumPostImageWithWidth:(CGSize)width FetchResult:(PHFetchResult *)result completion:(void (^) (UIImage *))completion
+- (void)getAlbumPostImageWithSize:(CGSize)size FetchResult:(PHFetchResult *)result completion:(void (^) (UIImage *))completion
 {
-        [self getPhotoWithWidth:width Asset:result.lastObject completion:completion];
+        [self getPhotoWithSize:size Asset:result.lastObject completion:completion];
 }
 
 - (void)getAlbumAssetWithFetchResult:(PHFetchResult *)result completion:(void (^) (NSArray *))completion
@@ -122,15 +120,19 @@
                 completion(photosAsset);
 }
 
-- (void)getPhotoWithWidth:(CGSize)width Asset:(PHAsset *)asset completion:(void (^) (UIImage *))completion
+- (void)getPhotoWithSize:(CGSize)size Asset:(PHAsset *)asset completion:(void (^) (UIImage *))completion
 {
         PHImageRequestOptions *option = [[PHImageRequestOptions alloc] init];
         option.resizeMode = PHImageRequestOptionsResizeModeFast;
+        option.networkAccessAllowed = YES;
+        option.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
+        option.synchronous = false;
         
         // size剛剛好的話，圖片會模糊
-        CGSize targetSize = CGSizeMake(width.width *1.5, width.height *1.5);
+        CGFloat target = MAX(size.width, size.height);
+        CGSize targetSize = CGSizeMake(target *2.0, target *2.0);
         
-        [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:targetSize contentMode:PHImageContentModeAspectFill options:option resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+        [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:targetSize contentMode:PHImageContentModeAspectFit options:option resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
                 
                 if (completion)
                         completion(result);
@@ -151,7 +153,55 @@
         return NO;
 }
 
-#pragma mark - video
+#pragma mark - Asset change
+- (void)addPhotoData:(NSData *)photoData completion:(void (^) (BOOL success, NSError * error))completion
+{
+        PHPhotoLibrary *photoLibrary = [PHPhotoLibrary sharedPhotoLibrary];
+        
+        [photoLibrary performChanges:^{
+                
+                PHAssetCreationRequest *photoRequest = [PHAssetCreationRequest creationRequestForAsset];
+                [photoRequest addResourceWithType:PHAssetResourceTypePhoto data:photoData options:nil];
+                
+                
+        } completionHandler:^(BOOL success, NSError * _Nullable error) {
+                
+                if (completion)
+                        completion(success, error);
+        }];
+}
+
+- (void)deletePhotoAsset:(NSArray *)photoAssets completion:(void (^) (BOOL success, NSError * error))completion
+{
+        PHPhotoLibrary *photoLibrary = [PHPhotoLibrary sharedPhotoLibrary];
+        NSMutableArray * deletes;
+        
+        if (photoAssets && [photoAssets[0] isKindOfClass:[AssetModel class]])
+        {
+                deletes = [NSMutableArray array];
+                
+                for (AssetModel * assetModel in photoAssets)
+                {
+                        [deletes addObject:assetModel.asset];
+                }
+        }
+        else if (photoAssets && [photoAssets[0] isKindOfClass:[PHAsset class]])
+        {
+                deletes = [NSMutableArray arrayWithArray:photoAssets];
+        }
+        
+        [photoLibrary performChanges:^{
+                
+                [PHAssetChangeRequest deleteAssets:deletes];
+                
+        } completionHandler:^(BOOL success, NSError * _Nullable error) {
+                
+                if (completion)
+                        completion(success, error);
+        }];
+}
+
+#pragma mark - Video
 - (void)getVideoWithAsset:(PHAsset *)asset completion:(void (^) (AVPlayerItem *))completion
 {
         [[PHImageManager defaultManager]requestPlayerItemForVideo:asset options:nil resultHandler:^(AVPlayerItem * _Nullable playerItem, NSDictionary * _Nullable info) {

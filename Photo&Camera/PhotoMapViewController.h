@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "AssetModel.h"
+#import "DataSourceModel.h"
 #import "Photo.h"
 #import "PhotoMapAnnotationView.h"
 
@@ -18,7 +19,9 @@
 
 @interface PhotoMapViewController : UIViewController
 
-@property (nonatomic) FetchResultModel *fetchResultModel;
-@property (nonatomic) NSArray * photosAsset;
+- (instancetype)initWithDataModel:(DataSourceModel *)dataModel;
+
+//@property (nonatomic) FetchResultModel *fetchResultModel;
+//@property (nonatomic) NSArray * photosAsset;
 
 @end

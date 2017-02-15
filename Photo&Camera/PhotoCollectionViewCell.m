@@ -35,24 +35,26 @@
         [super layoutSubviews];
 }
 
-- (UILabel *)timeLabel
+- (void)configureTimeLabel
 {
-        if (!_timeLabel)
-        {
-                CGFloat YPoint = _photoImageView.frame.size.height * 0.75;
-                
-                _timeLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, YPoint , _photoImageView.frame.size.width, _photoImageView.frame.size.height *0.25)];
-                
+        dispatch_async(dispatch_get_main_queue(), ^{
+                _timeLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, _photoImageView.frame.size.height * 0.75 , _photoImageView.frame.size.width, _photoImageView.frame.size.height *0.25)];
                 _timeLabel.backgroundColor = [UIColor blackColor];
                 _timeLabel.font = [UIFont boldSystemFontOfSize:11];
                 _timeLabel.textColor = [UIColor whiteColor];
                 _timeLabel.textAlignment = NSTextAlignmentRight;
-                
-                [self.contentView addSubview:_timeLabel];
-                [self.contentView bringSubviewToFront:_timeLabel];
+                [_timeLabel setText:[NSString stringWithFormat:@"%@", _cellModel.timeDuration]];
+                [_photoImageView addSubview:_timeLabel];
+        });
+}
+
+- (void)releaseTimeLabel
+{
+        if (_cellModel.mediaType == MediaTypeVideo && _timeLabel)
+        {
+                [_timeLabel removeFromSuperview];
+                _timeLabel = nil;
         }
-        
-        return _timeLabel;
 }
 
 @end

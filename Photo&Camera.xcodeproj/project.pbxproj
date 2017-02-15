@@ -34,9 +34,11 @@
 		A9D01DCB1DE4B61D00675E23 /* CameraDelegateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D01DCA1DE4B61D00675E23 /* CameraDelegateManager.m */; };
 		A9D032131E27914100CAB134 /* PhotoPreviewCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D032101E27914100CAB134 /* PhotoPreviewCollectionViewCell.m */; };
 		A9D032141E27914100CAB134 /* PhotoPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D032121E27914100CAB134 /* PhotoPreviewViewController.m */; };
+		A9E159621E52E0A900F0F3B1 /* DataSourceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E159611E52E0A900F0F3B1 /* DataSourceModel.m */; };
 		A9EF47221DF40E1700054129 /* AlbumTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EF47211DF40E1700054129 /* AlbumTableViewCell.m */; };
 		A9EF47251DF40E3300054129 /* AlbumTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EF47241DF40E3300054129 /* AlbumTableViewController.m */; };
 		A9EF47281DF417D700054129 /* AssetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9EF47271DF417D700054129 /* AssetModel.m */; };
+		A9FA4A3C1E4DB6EA0092F1AF /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FA4A3B1E4DB6EA0092F1AF /* Social.framework */; };
 		A9FCB3731DF5CD1900896424 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FCB3721DF5CD1900896424 /* PhotoCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -87,12 +89,15 @@
 		A9D032101E27914100CAB134 /* PhotoPreviewCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoPreviewCollectionViewCell.m; sourceTree = "<group>"; };
 		A9D032111E27914100CAB134 /* PhotoPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoPreviewViewController.h; sourceTree = "<group>"; };
 		A9D032121E27914100CAB134 /* PhotoPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoPreviewViewController.m; sourceTree = "<group>"; };
+		A9E159601E52E0A900F0F3B1 /* DataSourceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourceModel.h; sourceTree = "<group>"; };
+		A9E159611E52E0A900F0F3B1 /* DataSourceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSourceModel.m; sourceTree = "<group>"; };
 		A9EF47201DF40E1700054129 /* AlbumTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumTableViewCell.h; sourceTree = "<group>"; };
 		A9EF47211DF40E1700054129 /* AlbumTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumTableViewCell.m; sourceTree = "<group>"; };
 		A9EF47231DF40E3300054129 /* AlbumTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumTableViewController.h; sourceTree = "<group>"; };
 		A9EF47241DF40E3300054129 /* AlbumTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumTableViewController.m; sourceTree = "<group>"; };
 		A9EF47261DF417D700054129 /* AssetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetModel.h; sourceTree = "<group>"; };
 		A9EF47271DF417D700054129 /* AssetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssetModel.m; sourceTree = "<group>"; };
+		A9FA4A3B1E4DB6EA0092F1AF /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		A9FCB3711DF5CD1900896424 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		A9FCB3721DF5CD1900896424 /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9FA4A3C1E4DB6EA0092F1AF /* Social.framework in Frameworks */,
 				A9C2193D1E2F671D00248D8C /* MapKit.framework in Frameworks */,
 				A9A3E13B1DC9D31F0009CBC6 /* Photos.framework in Frameworks */,
 				A9A3E13C1DC9D31F0009CBC6 /* PhotosUI.framework in Frameworks */,
@@ -176,6 +182,7 @@
 		A9088DB81DC8A38C00430CAC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A9FA4A3B1E4DB6EA0092F1AF /* Social.framework */,
 				A9C2193C1E2F671D00248D8C /* MapKit.framework */,
 				A9A3E1391DC9D31F0009CBC6 /* Photos.framework */,
 				A9A3E13A1DC9D31F0009CBC6 /* PhotosUI.framework */,
@@ -206,6 +213,8 @@
 				A9088DBE1DC9CDD800430CAC /* Photo.m */,
 				A9BB5E791E013A6400BE5443 /* VideoPlayer.h */,
 				A9BB5E7A1E013A6400BE5443 /* VideoPlayer.m */,
+				A9E159601E52E0A900F0F3B1 /* DataSourceModel.h */,
+				A9E159611E52E0A900F0F3B1 /* DataSourceModel.m */,
 				A9EF47261DF417D700054129 /* AssetModel.h */,
 				A9EF47271DF417D700054129 /* AssetModel.m */,
 				A9EF47231DF40E3300054129 /* AlbumTableViewController.h */,
@@ -376,6 +385,7 @@
 				A9BB5E7B1E013A6400BE5443 /* VideoPlayer.m in Sources */,
 				A9D01DCB1DE4B61D00675E23 /* CameraDelegateManager.m in Sources */,
 				A9088DC21DC9CDE100430CAC /* Camera.m in Sources */,
+				A9E159621E52E0A900F0F3B1 /* DataSourceModel.m in Sources */,
 				A9EF47251DF40E3300054129 /* AlbumTableViewController.m in Sources */,
 				A961E3861DF1A7FA00EBDD10 /* PhotoPickerViewController.m in Sources */,
 				A9B501B91E2CFD6A0081F0F2 /* PhotoMapViewController.m in Sources */,

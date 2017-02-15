@@ -10,18 +10,33 @@
 
 @interface PhotoPreviewViewController () <UICollectionViewDataSource, UICollectionViewDelegate,UIScrollViewDelegate, AVPlayerViewControllerDelegate>
 {
+        VideoPlayer * _videoPlayer;
+        DataSourceModel * _dataSourceModel;
+        
         UICollectionView * _collectionView;
         UICollectionViewFlowLayout *_layout;
-        Photo *_photo;
-        VideoPlayer * _videoPlayer;
+        UIToolbar * _toolBar;
         NSInteger didSelectedCellIndexPath;
         
-        BOOL navigationBarIsHidden;
+        BOOL _navigationBarIsHidden;
+        BOOL _needUpdateData;
 }
 
 @end
 
 @implementation PhotoPreviewViewController
+- (instancetype)initWithDataModel:(DataSourceModel *)dataModel
+{
+        self = [self init];
+        
+        if (self)
+        {
+                _dataSourceModel = dataModel;
+        }
+        
+        return self;
+}
+
 - (instancetype)init
 {
         self = [super init];
@@ -30,7 +45,6 @@
         {
                 self.hidesBottomBarWhenPushed = YES;
                 self.automaticallyAdjustsScrollViewInsets = NO;
-                self.view.clipsToBounds = YES;
                 self.navigationController.navigationBar.translucent = NO;
         }
         
@@ -41,17 +55,13 @@
         [super viewDidLoad];
         // Do any additional setup after loading the view.
         
-        if (!_photosAsset)
-        {
-                [_photo getAlbumAssetWithFetchResult:_fetchResultModel.result completion:^(NSArray *photosAsset) {
-                        _photosAsset = photosAsset;
-                }];
-        }
-        
-        _photo = [[Photo alloc]init];
         [self configureCollectionView];
+        [self configureToolBar];
         
-        navigationBarIsHidden = NO;
+        _navigationBarIsHidden = NO;
+        _needUpdateData = NO;
+        
+        self.view.clipsToBounds = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -68,7 +78,7 @@
         [super viewDidLayoutSubviews];
         
         // when dismiss AVPlayerViewController, collection view won't scroll to posiion bottom automatically
-        [_collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:didSelectedCellIndexPath inSection:0] atScrollPosition:UICollectionViewScrollPositionBottom animated:NO];
+//        [_collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:didSelectedCellIndexPath inSection:0] atScrollPosition:UICollectionViewScrollPositionBottom animated:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -94,9 +104,29 @@
         _collectionView.showsHorizontalScrollIndicator = NO;
         _collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         _collectionView.contentOffset = CGPointMake(0, 0);
-        _collectionView.contentSize = CGSizeMake(self.photosAsset.count * (self.view.frame.size.width + 20), self.view.frame.size.height);
+        _collectionView.contentSize = CGSizeMake([_dataSourceModel numberOfDataAtIndex:0] * (self.view.frame.size.width + 20), self.view.frame.size.height);
         [_collectionView registerClass:[PhotoPreviewCollectionViewCell class] forCellWithReuseIdentifier:@"PhotoPreviewCollectionViewCell"];
         [self.view addSubview:_collectionView];
+}
+
+- (void)configureToolBar
+{
+        _toolBar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height - 44, self.view.frame.size.width, 44)];
+        _toolBar.barStyle = UIBarStyleBlack;
+        _toolBar.translucent = YES;
+        _toolBar.tintColor = [UIColor whiteColor];
+        
+        UIBarButtonItem *trashBarButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(deletePhoto)];
+        
+        UIBarButtonItem *actionBarButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(sharePhoto)];
+        
+        UIBarButtonItem *flexibleBarButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+        
+        NSArray *items = [NSArray arrayWithObjects:trashBarButton, flexibleBarButton, actionBarButton,nil];
+        
+        [_toolBar setItems:items];
+        
+        [self.view addSubview:_toolBar];
 }
 
 - (UIButton *)configPlayButton
@@ -115,15 +145,58 @@
         typeof(self) __weak weakSelf = self;
         
         didSelectedCellIndexPath = sender.tag;
-        AssetModel *model = _photosAsset[sender.tag];
+        AssetModel *model = [_dataSourceModel dataAtIndex:sender.tag];
         _videoPlayer = [VideoPlayer videoPlayerWithAsset:model.asset];
         [_videoPlayer getPlayerViewController:^(AVPlayerViewController *_avPlayerViewController) {
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
                         [weakSelf presentViewController:_avPlayerViewController animated:YES completion:^{
-                                
                                 [_avPlayerViewController.player play];
                         }];
+                });
+        }];
+}
+
+- (void)deletePhoto
+{
+        AssetModel *model = [_dataSourceModel dataAtIndex:_didSelectIndex];
+        
+        NSArray * deleteAssets = [NSArray arrayWithObject:model];
+        [_dataSourceModel deletePhoto:deleteAssets completion:^(BOOL success, NSError *error) {
+                
+                if (success)
+                {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                                if (_didSelectIndex > 0)
+                                        _didSelectIndex -= 1;
+                                else
+                                        _didSelectIndex = 1;
+                                
+                                [_collectionView setContentOffset:CGPointMake(_layout.itemSize.width * _didSelectIndex, 0) animated:NO];
+                                [_collectionView reloadData];
+                        });
+                        
+                        [_dataSourceModel.delegate dataSourceModelDidChange:_dataSourceModel];
+                }
+        }];
+}
+
+- (void)sharePhoto
+{
+        AssetModel *model = [_dataSourceModel dataAtIndex:_didSelectIndex];
+        UIScreen *screen = [UIScreen mainScreen];
+        CGSize imageTargetSize = CGSizeMake(screen.bounds.size.width, screen.bounds.size.height);
+        
+        typeof(self) __weak weakSelf = self;
+        [model photoImageSize:imageTargetSize completion:^(UIImage *image) {
+
+                UIImage *shareImage = image;
+                
+                NSArray *items = [NSArray arrayWithObjects:shareImage, nil];
+                UIActivityViewController * _activityVC = [[UIActivityViewController alloc]initWithActivityItems:items applicationActivities:nil];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                        [weakSelf presentViewController:_activityVC animated:YES completion:nil];
                 });
         }];
 }
@@ -131,7 +204,7 @@
 #pragma mark - status bar
 - (BOOL)prefersStatusBarHidden
 {
-        return navigationBarIsHidden;
+        return _navigationBarIsHidden;
 }
 
 - (UIStatusBarAnimation)preferredStatusBarUpdateAnimation
@@ -142,10 +215,14 @@
 #pragma mark - navigation bar
 - (void)setNavigationBarAppearance:(BOOL)hidden animated:(BOOL)animated
 {
+        CGFloat alpha = (hidden) ? 0.0 : 1.0;
+        
         [self.navigationController setNavigationBarHidden:hidden animated:animated];
         
         [UIView animateWithDuration:0.35 animations:^{
-        
+                
+                _toolBar.alpha = alpha;
+                
                 [self setNeedsStatusBarAppearanceUpdate];
         }];
 }
@@ -153,20 +230,20 @@
 #pragma mark - collection view data source
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-        return _photosAsset.count;
+        return [_dataSourceModel numberOfDataAtIndex:section];
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
         PhotoPreviewCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoPreviewCollectionViewCell" forIndexPath:indexPath];
         
-        AssetModel *model = _photosAsset[indexPath.row];
+        AssetModel *model = [_dataSourceModel dataAtIndex:indexPath.row];
+        cell.cellModel = model;
         
-        [_photo getPhotoWithWidth:cell.frame.size Asset:model.asset completion:^(UIImage *image) {
-                
+        [model photoImageSize:cell.frame.size completion:^(UIImage *image) {
                 cell.photoImageView.image = image;
-                cell.cellModel = model;
                 [cell resizeSubviews];
+
         }];
         
         return cell;
@@ -176,6 +253,7 @@
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
 {
         PhotoPreviewCollectionViewCell *previewCell = (PhotoPreviewCollectionViewCell *)cell;
+        
         if (previewCell.cellModel.mediaType == MediaTypeVideo)
         {
                 UIButton *playButton = [self configPlayButton];
@@ -185,6 +263,8 @@
         
         [previewCell addGesture];
         previewCell.delegate = self;
+        
+        _didSelectIndex = indexPath.row;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
@@ -201,8 +281,8 @@
 {
         switch (gestureType) {
                 case GestureTypeSingleTap:
-                        navigationBarIsHidden = !navigationBarIsHidden;
-                        [self setNavigationBarAppearance:navigationBarIsHidden animated:YES];
+                        _navigationBarIsHidden = !_navigationBarIsHidden;
+                        [self setNavigationBarAppearance:_navigationBarIsHidden animated:NO];
                         break;
                 case GestureTypeDoubleTap:
                         [cell zoomScale:[gesture locationInView:cell]];

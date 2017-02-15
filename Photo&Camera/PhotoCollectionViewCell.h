@@ -14,5 +14,9 @@
 
 @property (nonatomic) UIImageView *photoImageView;
 @property (nonatomic) UILabel *timeLabel;
+@property (nonatomic) AssetModel * cellModel;
+
+- (void)configureTimeLabel;
+- (void)releaseTimeLabel;
 
 @end

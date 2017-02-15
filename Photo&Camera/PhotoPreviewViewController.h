@@ -10,14 +10,14 @@
 #import <AVKit/AVKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import "AssetModel.h"
-#import "Photo.h"
+#import "DataSourceModel.h"
 #import "PhotoPreviewCollectionViewCell.h"
 #import "VideoPlayer.h"
 
 @interface PhotoPreviewViewController : UIViewController <PhotoPreviewCollectionViewCellDelegate>
 
-@property (nonatomic) FetchResultModel *fetchResultModel;
-@property (nonatomic) NSArray * photosAsset;
+- (instancetype)initWithDataModel:(DataSourceModel *)dataModel;
+
 @property (nonatomic, assign) NSInteger didSelectIndex;
 
 @end

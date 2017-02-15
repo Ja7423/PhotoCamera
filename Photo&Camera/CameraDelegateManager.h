@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
 #import <Photos/Photos.h>
+#import "Photo.h"
 
 @class CameraDelegateManager;
 @protocol CameraDelegate <NSObject>

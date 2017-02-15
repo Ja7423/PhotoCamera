@@ -10,10 +10,11 @@
 
 
 
-@interface AlbumTableViewController () <UITableViewDelegate>
+@interface AlbumTableViewController () <UITableViewDelegate, DataSourceModelDelegate, DataSourceManager>
 {
-        Photo * _photo;
-        NSArray* _albumList;
+        DataSourceModel * _dataSourceModel;
+        
+        BOOL _needUpdateData;
 }
 
 @end
@@ -37,15 +38,26 @@
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"back" style:UIBarButtonItemStylePlain target:self action:@selector(backToHome)];
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadTableView)];
         
-        _photo = [[Photo alloc]init];
         [self.tableView registerClass:[AlbumTableViewCell class] forCellReuseIdentifier:@"AlbumTableViewCell"];
+        self.tableView.dataSource = self;
+        self.tableView.delegate = self;
+        
+        _needUpdateData = NO;
+        _dataSourceModel = [[DataSourceModel alloc]init];
+        [_dataSourceModel startLinkPhotoLibrary];
+        _dataSourceModel.delegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
         [super viewWillAppear:animated];
-        
-        _albumList = [_photo getAlbumList];
+        [_dataSourceModel needUpdateData:_needUpdateData];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+        [super viewWillDisappear:animated];
+        _needUpdateData = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,6 +82,18 @@
         [self.tableView reloadData];
 }
 
+#pragma mark - data source model delegate
+- (void)dataSourceModelDidChange:(DataSourceModel *)dataSourceModel
+{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+                _needUpdateData = NO;
+                
+                [self.tableView reloadData];
+                
+        });
+}
+
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
         return 1;
@@ -77,7 +101,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-        return _albumList.count;
+        return [_dataSourceModel numberOfDataAtIndex:section];
 }
 
 
@@ -86,8 +110,11 @@
         AlbumTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AlbumTableViewCell" forIndexPath:indexPath];
     
         // Configure the cell...
-        FetchResultModel *model = _albumList[indexPath.row];
-        cell.albumImageView.image = [model postImageWidth:cell.albumImageView.frame.size];
+        FetchResultModel *model = [_dataSourceModel dataAtIndex:indexPath.row];
+         [model postImageSize:cell.albumImageView.frame.size completion:^(UIImage *image) {
+                 cell.albumImageView.image = image;
+         }];
+        
         [cell.albumLabel setText:[NSString stringWithFormat:@"%@ (%lu)", model.albumName, (unsigned long)model.count]];
         
         return cell;
@@ -102,7 +129,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
         PhotoPickerViewController * photoVC = [[PhotoPickerViewController alloc]init];
-        photoVC.fetchResultModel = _albumList[indexPath.row];
+        photoVC.fetchResultModel = [_dataSourceModel dataAtIndex:indexPath.row];
         [self.navigationController pushViewController:photoVC animated:YES];
 }
 

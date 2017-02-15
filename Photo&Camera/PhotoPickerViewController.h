@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Photo.h"
 #import "AssetModel.h"
+#import "DataSourceModel.h"
 #import "PhotoCollectionViewCell.h"
 #import "PhotoPreviewViewController.h"
 #import "PhotoMapViewController.h"

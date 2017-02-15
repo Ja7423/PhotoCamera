@@ -10,10 +10,13 @@
 
 @interface CameraDelegateManager ()
 {
-        NSData *photoData;
+        Photo * _photo;
 }
 
+@property (nonatomic) NSData *photoData;
+
 @end
+
 
 @implementation CameraDelegateManager
 
@@ -23,7 +26,8 @@
         if (self.captureAnimation)
                 self.captureAnimation();
         
-        photoData = nil;
+        _photo = [[Photo alloc]init];
+        _photoData = nil;
 }
 
 - (void)captureOutput:(AVCapturePhotoOutput *)captureOutput didFinishProcessingPhotoSampleBuffer:(nullable CMSampleBufferRef)photoSampleBuffer previewPhotoSampleBuffer:(nullable CMSampleBufferRef)previewPhotoSampleBuffer resolvedSettings:(AVCaptureResolvedPhotoSettings *)resolvedSettings bracketSettings:(nullable AVCaptureBracketedStillImageSettings *)bracketSettings error:(nullable NSError *)error
@@ -33,7 +37,7 @@
                 return;
         }
         
-        photoData = [AVCapturePhotoOutput JPEGPhotoDataRepresentationForJPEGSampleBuffer:photoSampleBuffer previewPhotoSampleBuffer:previewPhotoSampleBuffer];
+        _photoData = [AVCapturePhotoOutput JPEGPhotoDataRepresentationForJPEGSampleBuffer:photoSampleBuffer previewPhotoSampleBuffer:previewPhotoSampleBuffer];
 }
 
 - (void)captureOutput:(AVCapturePhotoOutput *)captureOutput didFinishCaptureForResolvedSettings:(AVCaptureResolvedPhotoSettings *)resolvedSettings error:(nullable NSError *)error
@@ -42,19 +46,12 @@
          it’s guaranteed to occur last, and to use this as the point where you handle the results of the photo capture.
          */
         
-        PHPhotoLibrary *photoLibrary = [PHPhotoLibrary sharedPhotoLibrary];
-        
-        [photoLibrary performChanges:^{
-        
-                PHAssetCreationRequest *photoRequest = [PHAssetCreationRequest creationRequestForAsset];
-                [photoRequest addResourceWithType:PHAssetResourceTypePhoto data:photoData options:nil];
+        typeof(self) __weak weakSelf = self;
+        [_photo addPhotoData:_photoData completion:^(BOOL success, NSError *error) {
                 
-                
-        } completionHandler:^(BOOL success, NSError * _Nullable error) {
-                
-                if ([self.delegate respondsToSelector:@selector(CameraDelegate:didFinishCapturePhoto:withError:)])
-                        [self.delegate CameraDelegate:self didFinishCapturePhoto:photoData withError:error];
-                
+                _photo = nil;
+                if ([weakSelf.delegate respondsToSelector:@selector(CameraDelegate:didFinishCapturePhoto:withError:)])
+                        [weakSelf.delegate CameraDelegate:weakSelf didFinishCapturePhoto:weakSelf.photoData withError:error];
         }];
 }
 

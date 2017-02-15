@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Photo.h"
+#import "DataSourceModel.h"
 #import "AlbumTableViewCell.h"
 #import "PhotoPickerViewController.h"
 

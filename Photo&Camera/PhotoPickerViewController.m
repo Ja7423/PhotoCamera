@@ -8,9 +8,10 @@
 
 #import "PhotoPickerViewController.h"
 
-@interface PhotoPickerViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface PhotoPickerViewController () <UICollectionViewDataSource, UICollectionViewDelegate, DataSourceModelDelegate, DataSourceManager>
 {
-        NSArray * _photosAsset;
+        DataSourceModel * _dataSourceModel;
+        
         UICollectionView * _collectionView;
         UICollectionViewFlowLayout *_layout;
 }
@@ -20,16 +21,26 @@
 @implementation PhotoPickerViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+        [super viewDidLoad];
+        // Do any additional setup after loading the view.
         
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"map" style:UIBarButtonItemStylePlain target:self action:@selector(goToMapCategory)];
         
-        [self configureCollectionView];
+        _dataSourceModel = [[DataSourceModel alloc]init];
+        [_dataSourceModel requestFetchResult:_fetchResultModel.result];
+        _dataSourceModel.delegate = self;
         
-        [[[Photo alloc]init] getAlbumAssetWithFetchResult:_fetchResultModel.result completion:^(NSArray *photosAsset) {
-                _photosAsset = [NSArray arrayWithArray:photosAsset];
-        }];
+        [self configureCollectionView];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+        [super viewWillAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+        [super viewWillDisappear:animated];
 }
 
 - (void)configureCollectionView
@@ -45,7 +56,7 @@
         _collectionView.backgroundColor = [UIColor whiteColor];
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
-        _collectionView.contentSize = CGSizeMake(self.view.frame.size.width, (_photosAsset.count / 4) * width);
+        _collectionView.contentSize = CGSizeMake(self.view.frame.size.width, ([_dataSourceModel numberOfDataAtIndex:0] / 4) * width);
         [_collectionView registerClass:[PhotoCollectionViewCell class] forCellWithReuseIdentifier:@"PhotoCollectionViewCell"];
         [self.view addSubview:_collectionView];
 }
@@ -59,66 +70,80 @@
          http://stackoverflow.com/questions/14760496/uicollectionview-automatically-scroll-to-bottom-when-screen-loads
          */
         
-        if (_photosAsset.count == 0)
+        if ([_dataSourceModel numberOfDataAtIndex:0] == 0)
                 return;
         
-        [_collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:(_photosAsset.count - 1) inSection:0] atScrollPosition:UICollectionViewScrollPositionBottom animated:NO];
+        [_collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:([_dataSourceModel numberOfDataAtIndex:0] - 1) inSection:0] atScrollPosition:UICollectionViewScrollPositionBottom animated:NO];
 }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+        [super didReceiveMemoryWarning];
+        // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - button action
 - (void)goToMapCategory
 {
-        PhotoMapViewController * _photoMapVC = [[PhotoMapViewController alloc]init];
-        _photoMapVC.fetchResultModel = _fetchResultModel;
-        _photoMapVC.photosAsset = _photosAsset;
+        PhotoMapViewController * _photoMapVC = [[PhotoMapViewController alloc]initWithDataModel:_dataSourceModel];
         [self.navigationController pushViewController:_photoMapVC animated:YES];
+}
+
+#pragma mark - data source model delegate
+- (void)dataSourceModelDidChange:(DataSourceModel *)dataSourceModel
+{
+        dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [_collectionView reloadData];
+        });
 }
 
 #pragma mark - collection view data source
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-        return _photosAsset.count;
+        return[_dataSourceModel numberOfDataAtIndex:section];
 }
 
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
         PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PhotoCollectionViewCell" forIndexPath:indexPath];
-
-        AssetModel *model = _photosAsset[indexPath.row];
-        [model photoImageWidth:cell.photoImageView.frame.size completion:^(UIImage *image) {
-                cell.photoImageView.image = image;
-        }];
         
-        if (model.mediaType == MediaTypeVideo)
-                [cell.timeLabel setText:model.timeDuration];
+        [cell releaseTimeLabel];
+        
+        AssetModel * model = [_dataSourceModel dataAtIndex:indexPath.row];
+        cell.cellModel = model;
+        
+        [model photoImageSize:cell.photoImageView.frame.size completion:^(UIImage *image) {
+                
+                cell.photoImageView.image = image;
+                
+                if (model.mediaType == MediaTypeVideo)
+                {
+                        [cell configureTimeLabel];
+                }
+
+        }];
         
         return cell;
 }
 
 
+#pragma mark - collection view delegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-        PhotoPreviewViewController *previewVC = [[PhotoPreviewViewController alloc]init];
-        previewVC.fetchResultModel = self.fetchResultModel;
-        previewVC.photosAsset = _photosAsset;
+        PhotoPreviewViewController *previewVC = [[PhotoPreviewViewController alloc]initWithDataModel:_dataSourceModel];
         previewVC.didSelectIndex = indexPath.row;
         [self.navigationController pushViewController:previewVC animated:YES];
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

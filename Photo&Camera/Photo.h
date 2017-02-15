@@ -16,9 +16,12 @@
 + (void)CheckPhotoisAvailable;
 
 - (NSArray *)getAlbumList;
-- (void)getAlbumPostImageWithWidth:(CGSize)width FetchResult:(PHFetchResult *)result completion:(void (^) (UIImage * image))completion;
+- (void)getAlbumPostImageWithSize:(CGSize)size FetchResult:(PHFetchResult *)result completion:(void (^) (UIImage * image))completion;
 - (void)getAlbumAssetWithFetchResult:(PHFetchResult *)result completion:(void (^) (NSArray *photosAsset))completion;
-- (void)getPhotoWithWidth:(CGSize)width Asset:(PHAsset *)asset completion:(void (^) (UIImage * image))completion;
+- (void)getPhotoWithSize:(CGSize)size Asset:(PHAsset *)asset completion:(void (^) (UIImage * image))completion;
+
+- (void)addPhotoData:(NSData *)photoData completion:(void (^) (BOOL success, NSError * error))completion;
+- (void)deletePhotoAsset:(NSArray *)photoAssets completion:(void (^) (BOOL success, NSError * error))completion;
 
 - (void)getVideoWithAsset:(PHAsset *)asset completion:(void (^) (AVPlayerItem * playerItem))completion;
 

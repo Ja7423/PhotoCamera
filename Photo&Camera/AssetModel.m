@@ -11,15 +11,15 @@
 
 @implementation FetchResultModel
 
-- (UIImage *)postImageWidth:(CGSize)width
+- (void)postImageSize:(CGSize)size completion:(void (^) (UIImage *))completion
 {
-        __block UIImage *postImage;
-        
-        [[Photo new]getAlbumPostImageWithWidth:width FetchResult:self.result completion:^(UIImage *image) {
-                postImage = image;
-        }];
-        
-        return postImage;
+        [[Photo new]getAlbumPostImageWithSize:size FetchResult:self.result completion:completion];
+}
+
+- (NSUInteger)count
+{
+        PHFetchResult* result = _result;
+        return result.count;
 }
 
 @end
@@ -28,9 +28,9 @@
 
 @implementation AssetModel
 
-- (void)photoImageWidth:(CGSize)width completion:(void (^) (UIImage *))completion
+- (void)photoImageSize:(CGSize)size completion:(void (^) (UIImage *))completion
 {
-        [[Photo new]getPhotoWithWidth:width Asset:self.asset completion:completion];
+        [[Photo new]getPhotoWithSize:size Asset:self.asset completion:completion];
 }
 
 @end

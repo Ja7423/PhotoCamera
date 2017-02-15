@@ -9,24 +9,38 @@
 #import "PhotoMapViewController.h"
 
 @interface PhotoMapViewController () <MKMapViewDelegate, CCHMapClusterControllerDelegate>
+{
+        DataSourceModel * _dataSourceModel;
+}
 
-@property(nonatomic) CCHMapClusterController * CCHMapClusterController;
+@property (nonatomic) CCHMapClusterController * CCHMapClusterController;
 @property (nonatomic) MKMapView * mapView;
 
 @end
 
 @implementation PhotoMapViewController
+- (instancetype)initWithDataModel:(DataSourceModel *)dataModel
+{
+        self = [self init];
+        
+        if (self)
+        {
+                _dataSourceModel = dataModel;
+        }
+        
+        return self;
+}
+
+- (instancetype)init
+{
+        self = [super init];
+        
+        return self;
+}
 
 - (void)viewDidLoad {
         [super viewDidLoad];
         // Do any additional setup after loading the view.
-        
-        if (!_photosAsset)
-        {
-                [[[Photo alloc]init] getAlbumAssetWithFetchResult:_fetchResultModel.result completion:^(NSArray *photosAsset) {
-                        _photosAsset = photosAsset;
-                }];
-        }
         
         _mapView = [[MKMapView alloc]initWithFrame:self.view.frame];
         _mapView.delegate = self;
@@ -45,7 +59,7 @@
 {
         NSMutableArray *annotations = [[NSMutableArray alloc]init];
         
-        [_photosAsset enumerateObjectsUsingBlock:^(AssetModel *asset, NSUInteger idx, BOOL * _Nonnull stop) {
+        [[_dataSourceModel photoData] enumerateObjectsUsingBlock:^(AssetModel *asset, NSUInteger idx, BOOL * _Nonnull stop) {
                 
                 if (asset.location)
                 {
@@ -67,7 +81,7 @@
         NSArray * annotations = [mapClusterAnnotation.annotations allObjects];
         MKPointAnnotation *pointAnnotation = annotations[0];
         
-        for (AssetModel *asset in _photosAsset) {
+        for (AssetModel *asset in [_dataSourceModel photoData]) {
                 if (asset.location.coordinate.latitude == pointAnnotation.coordinate.latitude &&
                     asset.location.coordinate.longitude == pointAnnotation.coordinate.longitude)
                 {
@@ -82,7 +96,7 @@
 - (void)addPhotoImageFromAnnotation:(CCHMapClusterAnnotation *)mapClusterAnnotation ToAnnotationView:(PhotoMapAnnotationView *)annotationView
 {
         AssetModel *assetModel = [self assetModelFromLocation:mapClusterAnnotation];
-        [assetModel photoImageWidth:CGSizeMake(50, 50) completion:^(UIImage *image) {
+        [assetModel photoImageSize:CGSizeMake(50, 50) completion:^(UIImage *image) {
                 
                 annotationView.photoImageView.image = image;
         }];

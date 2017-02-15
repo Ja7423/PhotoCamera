@@ -19,7 +19,7 @@
 
 @property (nonatomic ,assign) NSUInteger count;
 
-- (UIImage *)postImageWidth:(CGSize)width;
+- (void)postImageSize:(CGSize)size completion:(void (^) (UIImage *image))completion;
 
 @end
 
@@ -34,7 +34,7 @@
 
 @property (nonatomic) CLLocation *location;
 
-- (void)photoImageWidth:(CGSize)width completion:(void (^) (UIImage *image))completion;
+- (void)photoImageSize:(CGSize)size completion:(void (^) (UIImage *image))completion;
 
 
 @end
