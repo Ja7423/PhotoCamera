@@ -1,0 +1,570 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		014C39697A9B8A6E4E4333C39E24292B /* CCHCenterOfMassMapClusterer.m in Sources */ = {isa = PBXBuildFile; fileRef = 265D97B742D6E80304AEC33B3D603A8F /* CCHCenterOfMassMapClusterer.m */; };
+		03D51ACBA285510A55D84C762AD3F9C0 /* CCHMapClusterController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA095D7E1826954B2AE9F1EECE2C6D8 /* CCHMapClusterController.m */; };
+		23A10301F8CE3CF9D057F0E2BF4376FE /* CCHMapClusterer.h in Headers */ = {isa = PBXBuildFile; fileRef = CFAA2806C17B0EEBD5C5B3F2CCE1C0DA /* CCHMapClusterer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2447B9539F68734078BA344CADFF8EC7 /* CCHMapClusterControllerDebugPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 268E13DFF0F26A01892FBDCEE77345F5 /* CCHMapClusterControllerDebugPolygon.m */; };
+		28A86CBE6B26746DCE464FD498B93880 /* CCHMapTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F292EAC99C65EAD43E3EC9735B1C522 /* CCHMapTree.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		37741FB9348B5489D440CD195E9C8823 /* CCHMapTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C6349FA6FE39D53A590BA269779E9F /* CCHMapTree.m */; };
+		3A6AAD39026480D60D8E8F319087986E /* CCHMapAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = FFCA5A7409FF0F1452F66A74E2192B76 /* CCHMapAnimator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43849B791AF8BBC296C364A19A2E9DF1 /* CCHMapClusterControllerUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 515CEE5DD3EF39B8281FBDD1423A953C /* CCHMapClusterControllerUtils.m */; };
+		4DAD13E0A1C249697FE9D378A086CC6B /* CCHMapClusterControllerDebugPolygon.h in Headers */ = {isa = PBXBuildFile; fileRef = 6973978FAE573A7A88563F3AB951E396 /* CCHMapClusterControllerDebugPolygon.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		53552F01087F54AFF8EA195101A926E7 /* CCHMapClusterAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = F1A8A315BD5E14E7F6E5CA7413AF41C4 /* CCHMapClusterAnnotation.m */; };
+		58F417E9D8FA191243077AEC7CC5F583 /* CCHMapClusterController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF14384C60C8A83B03A5757F5EF66FE /* CCHMapClusterController-dummy.m */; };
+		5D4E72DFED127A65F0A538E5D2DBA470 /* Pods-Photo&Camera-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E82BE853472135C4B98854F3FDA9416 /* Pods-Photo&Camera-dummy.m */; };
+		5D70EC70E5A9C0C52AACEC420D24B27B /* CCHNearCenterMapClusterer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4245F1E00CDB96D280CC6BC17C484735 /* CCHNearCenterMapClusterer.m */; };
+		625A856826AF8844C74213619609E885 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2358F16486F411119537C5E116932219 /* Foundation.framework */; };
+		8D7CA533670863EBEE0E1A1C13E5CB5D /* CCHCenterOfMassMapClusterer.h in Headers */ = {isa = PBXBuildFile; fileRef = BD4EF828891F44FBD3A05A9C39D0EAEE /* CCHCenterOfMassMapClusterer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		90E127B20E651F224DE641C9D16489E7 /* CCHMapViewDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 24561610F4E4C7E9EB9A4511C931C648 /* CCHMapViewDelegateProxy.m */; };
+		92E1810B76C63DFDAE93B81708E6DA61 /* CCHMapClusterOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA389E8B13A29ED7EEE5DACAAE6B4DA /* CCHMapClusterOperation.m */; };
+		9DA73634923DA9CB7CCFC40F81D9DFDB /* CCHFadeInOutMapAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFCABEB83ADD6F865CA419C55CA121D /* CCHFadeInOutMapAnimator.m */; };
+		9F61D119DEC1E5CABB07E3DB33135FD7 /* CCHMapClusterAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = E305C67BC94594BAD2EB4D7742D4EE20 /* CCHMapClusterAnnotation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A770AB9EC96B4CB037C109B00819AD16 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40870FA3DF5DD6AD4BF8D21A9D6E9804 /* MapKit.framework */; };
+		A87766FAD5C707664A15050CE6994840 /* CCHMapTreeUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 1ADDCE5D53DBC0BAA578F1A18895BA37 /* CCHMapTreeUtils.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		B1B7868E70947735F9A5CFDD135ABA7E /* CCHMapViewDelegateProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = E12EBE3C050CDC5568870BE0FB48FD0F /* CCHMapViewDelegateProxy.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		BB2B6B5F4F81A9A653237857B4249F4E /* CCHFadeInOutMapAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = EEDC37F082CC7751FF6A5D1B9FA8EB1C /* CCHFadeInOutMapAnimator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CB7CF9DF2BBA756102580162254ABD18 /* CCHMapClusterController.h in Headers */ = {isa = PBXBuildFile; fileRef = 028EA6EA566863ACBBBCB8A7C6BD997B /* CCHMapClusterController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD8F7E96AEE4FA632A5594DD466BCC39 /* CCHNearCenterMapClusterer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FEC7F070336B0469D8EB99BB3E10EFE /* CCHNearCenterMapClusterer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D14618AB6214C8C5F2F8041035431B9C /* CCHMapTreeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 589CF59E1926D1CF6EF5865F6FCBC351 /* CCHMapTreeUtils.m */; };
+		D3F1DCA17A9C27F8960698EF75B9CD9F /* CCHMapClusterControllerUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 688F28BDE0A51A81DB741A8E192D0743 /* CCHMapClusterControllerUtils.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		DCFFBEF39527D87A98B8A4EF3A642041 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1494287433DE58DAEE7F19EB6AD38F6 /* CoreLocation.framework */; };
+		E2511F0EAC2917648467754B7B8FF488 /* CCHMapClusterControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EB9CAB82C2568052B15DA639785F13B /* CCHMapClusterControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E93D6FCC45D7E173A5AE54F80ABDECC7 /* CCHMapClusterOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = BFE4C23D6B9BF4E98419D451E250DB8C /* CCHMapClusterOperation.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		F54D798B2BDDA133955D0E2F88E20E1E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2358F16486F411119537C5E116932219 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5808F3B8101BF8D353D0021906E829D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D252272B13D2E7AD51A8F92A418C5EB3;
+			remoteInfo = CCHMapClusterController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		028EA6EA566863ACBBBCB8A7C6BD997B /* CCHMapClusterController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapClusterController.h; path = CCHMapClusterController/CCHMapClusterController.h; sourceTree = "<group>"; };
+		08EC0406B8330759C7E32AB8F8016D94 /* Pods-Photo&Camera-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Photo&Camera-acknowledgements.plist"; sourceTree = "<group>"; };
+		09C6349FA6FE39D53A590BA269779E9F /* CCHMapTree.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHMapTree.m; path = CCHMapClusterController/CCHMapTree.m; sourceTree = "<group>"; };
+		1548B106C486E3ECB24AA9C626FD4A6D /* Pods-Photo&Camera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Photo&Camera.debug.xcconfig"; sourceTree = "<group>"; };
+		1ADDCE5D53DBC0BAA578F1A18895BA37 /* CCHMapTreeUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapTreeUtils.h; path = CCHMapClusterController/CCHMapTreeUtils.h; sourceTree = "<group>"; };
+		2358F16486F411119537C5E116932219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		24561610F4E4C7E9EB9A4511C931C648 /* CCHMapViewDelegateProxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHMapViewDelegateProxy.m; path = CCHMapClusterController/CCHMapViewDelegateProxy.m; sourceTree = "<group>"; };
+		265D97B742D6E80304AEC33B3D603A8F /* CCHCenterOfMassMapClusterer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHCenterOfMassMapClusterer.m; path = CCHMapClusterController/CCHCenterOfMassMapClusterer.m; sourceTree = "<group>"; };
+		268E13DFF0F26A01892FBDCEE77345F5 /* CCHMapClusterControllerDebugPolygon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHMapClusterControllerDebugPolygon.m; path = CCHMapClusterController/CCHMapClusterControllerDebugPolygon.m; sourceTree = "<group>"; };
+		2ECEDB9B3A0A52518C6FFCD58B7C1750 /* Pods-Photo&Camera-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Photo&Camera-acknowledgements.markdown"; sourceTree = "<group>"; };
+		359A51CD06AEFE1982857D643632177F /* Pods-Photo&Camera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Photo&Camera.release.xcconfig"; sourceTree = "<group>"; };
+		3FEC7F070336B0469D8EB99BB3E10EFE /* CCHNearCenterMapClusterer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHNearCenterMapClusterer.h; path = CCHMapClusterController/CCHNearCenterMapClusterer.h; sourceTree = "<group>"; };
+		40870FA3DF5DD6AD4BF8D21A9D6E9804 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
+		4245F1E00CDB96D280CC6BC17C484735 /* CCHNearCenterMapClusterer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHNearCenterMapClusterer.m; path = CCHMapClusterController/CCHNearCenterMapClusterer.m; sourceTree = "<group>"; };
+		4C2F98BF4E005B05588199C7FE2F1E4F /* Pods-Photo&Camera-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Photo&Camera-resources.sh"; sourceTree = "<group>"; };
+		4E6CFF3D589E5DB80DE8546BD966C4F3 /* Pods-Photo&Camera-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Photo&Camera-frameworks.sh"; sourceTree = "<group>"; };
+		4F292EAC99C65EAD43E3EC9735B1C522 /* CCHMapTree.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapTree.h; path = CCHMapClusterController/CCHMapTree.h; sourceTree = "<group>"; };
+		515CEE5DD3EF39B8281FBDD1423A953C /* CCHMapClusterControllerUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHMapClusterControllerUtils.m; path = CCHMapClusterController/CCHMapClusterControllerUtils.m; sourceTree = "<group>"; };
+		58141456E97ABCE213BA607E78295DE2 /* CCHMapClusterController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CCHMapClusterController.xcconfig; sourceTree = "<group>"; };
+		589CF59E1926D1CF6EF5865F6FCBC351 /* CCHMapTreeUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHMapTreeUtils.m; path = CCHMapClusterController/CCHMapTreeUtils.m; sourceTree = "<group>"; };
+		5E82BE853472135C4B98854F3FDA9416 /* Pods-Photo&Camera-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Photo&Camera-dummy.m"; sourceTree = "<group>"; };
+		5EB9CAB82C2568052B15DA639785F13B /* CCHMapClusterControllerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapClusterControllerDelegate.h; path = CCHMapClusterController/CCHMapClusterControllerDelegate.h; sourceTree = "<group>"; };
+		688F28BDE0A51A81DB741A8E192D0743 /* CCHMapClusterControllerUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapClusterControllerUtils.h; path = CCHMapClusterController/CCHMapClusterControllerUtils.h; sourceTree = "<group>"; };
+		6973978FAE573A7A88563F3AB951E396 /* CCHMapClusterControllerDebugPolygon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapClusterControllerDebugPolygon.h; path = CCHMapClusterController/CCHMapClusterControllerDebugPolygon.h; sourceTree = "<group>"; };
+		6EA389E8B13A29ED7EEE5DACAAE6B4DA /* CCHMapClusterOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHMapClusterOperation.m; path = CCHMapClusterController/CCHMapClusterOperation.m; sourceTree = "<group>"; };
+		7BF14384C60C8A83B03A5757F5EF66FE /* CCHMapClusterController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CCHMapClusterController-dummy.m"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B1494287433DE58DAEE7F19EB6AD38F6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		BD4EF828891F44FBD3A05A9C39D0EAEE /* CCHCenterOfMassMapClusterer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHCenterOfMassMapClusterer.h; path = CCHMapClusterController/CCHCenterOfMassMapClusterer.h; sourceTree = "<group>"; };
+		BFE4C23D6B9BF4E98419D451E250DB8C /* CCHMapClusterOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapClusterOperation.h; path = CCHMapClusterController/CCHMapClusterOperation.h; sourceTree = "<group>"; };
+		C2E3786A19A564D3AA95AE3781E56D47 /* CCHMapClusterController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CCHMapClusterController-prefix.pch"; sourceTree = "<group>"; };
+		CFAA2806C17B0EEBD5C5B3F2CCE1C0DA /* CCHMapClusterer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapClusterer.h; path = CCHMapClusterController/CCHMapClusterer.h; sourceTree = "<group>"; };
+		E0DCEDD98FF15E625065E1440E848BB7 /* libPods-Photo&Camera.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Photo&Camera.a"; path = "libPods-Photo&Camera.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E12EBE3C050CDC5568870BE0FB48FD0F /* CCHMapViewDelegateProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapViewDelegateProxy.h; path = CCHMapClusterController/CCHMapViewDelegateProxy.h; sourceTree = "<group>"; };
+		E305C67BC94594BAD2EB4D7742D4EE20 /* CCHMapClusterAnnotation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapClusterAnnotation.h; path = CCHMapClusterController/CCHMapClusterAnnotation.h; sourceTree = "<group>"; };
+		E7F1EDD47E7DAA465FD80273A60BA37C /* libCCHMapClusterController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libCCHMapClusterController.a; path = libCCHMapClusterController.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEDC37F082CC7751FF6A5D1B9FA8EB1C /* CCHFadeInOutMapAnimator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHFadeInOutMapAnimator.h; path = CCHMapClusterController/CCHFadeInOutMapAnimator.h; sourceTree = "<group>"; };
+		EFA095D7E1826954B2AE9F1EECE2C6D8 /* CCHMapClusterController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHMapClusterController.m; path = CCHMapClusterController/CCHMapClusterController.m; sourceTree = "<group>"; };
+		F1A8A315BD5E14E7F6E5CA7413AF41C4 /* CCHMapClusterAnnotation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHMapClusterAnnotation.m; path = CCHMapClusterController/CCHMapClusterAnnotation.m; sourceTree = "<group>"; };
+		FFCA5A7409FF0F1452F66A74E2192B76 /* CCHMapAnimator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CCHMapAnimator.h; path = CCHMapClusterController/CCHMapAnimator.h; sourceTree = "<group>"; };
+		FFFCABEB83ADD6F865CA419C55CA121D /* CCHFadeInOutMapAnimator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CCHFadeInOutMapAnimator.m; path = CCHMapClusterController/CCHFadeInOutMapAnimator.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5EBDF2136F5318E245330586EC398A33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCFFBEF39527D87A98B8A4EF3A642041 /* CoreLocation.framework in Frameworks */,
+				F54D798B2BDDA133955D0E2F88E20E1E /* Foundation.framework in Frameworks */,
+				A770AB9EC96B4CB037C109B00819AD16 /* MapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88093E4F2104983F3B1669569F55FC5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				625A856826AF8844C74213619609E885 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				922CBED1C949B92A67803AB63048DF58 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3464072B9CB4ACF395B7AC84E971C0B4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				58141456E97ABCE213BA607E78295DE2 /* CCHMapClusterController.xcconfig */,
+				7BF14384C60C8A83B03A5757F5EF66FE /* CCHMapClusterController-dummy.m */,
+				C2E3786A19A564D3AA95AE3781E56D47 /* CCHMapClusterController-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CCHMapClusterController";
+			sourceTree = "<group>";
+		};
+		3C2A5B71D187BB0C5D2E1117B2CFEB1B /* Pods-Photo&Camera */ = {
+			isa = PBXGroup;
+			children = (
+				2ECEDB9B3A0A52518C6FFCD58B7C1750 /* Pods-Photo&Camera-acknowledgements.markdown */,
+				08EC0406B8330759C7E32AB8F8016D94 /* Pods-Photo&Camera-acknowledgements.plist */,
+				5E82BE853472135C4B98854F3FDA9416 /* Pods-Photo&Camera-dummy.m */,
+				4E6CFF3D589E5DB80DE8546BD966C4F3 /* Pods-Photo&Camera-frameworks.sh */,
+				4C2F98BF4E005B05588199C7FE2F1E4F /* Pods-Photo&Camera-resources.sh */,
+				1548B106C486E3ECB24AA9C626FD4A6D /* Pods-Photo&Camera.debug.xcconfig */,
+				359A51CD06AEFE1982857D643632177F /* Pods-Photo&Camera.release.xcconfig */,
+			);
+			name = "Pods-Photo&Camera";
+			path = "Target Support Files/Pods-Photo&Camera";
+			sourceTree = "<group>";
+		};
+		552510B9DB917ABF79C6C0846488B4B8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E7F1EDD47E7DAA465FD80273A60BA37C /* libCCHMapClusterController.a */,
+				E0DCEDD98FF15E625065E1440E848BB7 /* libPods-Photo&Camera.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
+				DB68C81BE75B08EA5A758AE0747B98C7 /* Pods */,
+				552510B9DB917ABF79C6C0846488B4B8 /* Products */,
+				F2C09441925FBD234A844D93CE86C31B /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		922CBED1C949B92A67803AB63048DF58 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				B1494287433DE58DAEE7F19EB6AD38F6 /* CoreLocation.framework */,
+				2358F16486F411119537C5E116932219 /* Foundation.framework */,
+				40870FA3DF5DD6AD4BF8D21A9D6E9804 /* MapKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		B50D0E4CC58A35391F219EB30F10BF3D /* CCHMapClusterController */ = {
+			isa = PBXGroup;
+			children = (
+				BD4EF828891F44FBD3A05A9C39D0EAEE /* CCHCenterOfMassMapClusterer.h */,
+				265D97B742D6E80304AEC33B3D603A8F /* CCHCenterOfMassMapClusterer.m */,
+				EEDC37F082CC7751FF6A5D1B9FA8EB1C /* CCHFadeInOutMapAnimator.h */,
+				FFFCABEB83ADD6F865CA419C55CA121D /* CCHFadeInOutMapAnimator.m */,
+				FFCA5A7409FF0F1452F66A74E2192B76 /* CCHMapAnimator.h */,
+				E305C67BC94594BAD2EB4D7742D4EE20 /* CCHMapClusterAnnotation.h */,
+				F1A8A315BD5E14E7F6E5CA7413AF41C4 /* CCHMapClusterAnnotation.m */,
+				028EA6EA566863ACBBBCB8A7C6BD997B /* CCHMapClusterController.h */,
+				EFA095D7E1826954B2AE9F1EECE2C6D8 /* CCHMapClusterController.m */,
+				6973978FAE573A7A88563F3AB951E396 /* CCHMapClusterControllerDebugPolygon.h */,
+				268E13DFF0F26A01892FBDCEE77345F5 /* CCHMapClusterControllerDebugPolygon.m */,
+				5EB9CAB82C2568052B15DA639785F13B /* CCHMapClusterControllerDelegate.h */,
+				688F28BDE0A51A81DB741A8E192D0743 /* CCHMapClusterControllerUtils.h */,
+				515CEE5DD3EF39B8281FBDD1423A953C /* CCHMapClusterControllerUtils.m */,
+				CFAA2806C17B0EEBD5C5B3F2CCE1C0DA /* CCHMapClusterer.h */,
+				BFE4C23D6B9BF4E98419D451E250DB8C /* CCHMapClusterOperation.h */,
+				6EA389E8B13A29ED7EEE5DACAAE6B4DA /* CCHMapClusterOperation.m */,
+				4F292EAC99C65EAD43E3EC9735B1C522 /* CCHMapTree.h */,
+				09C6349FA6FE39D53A590BA269779E9F /* CCHMapTree.m */,
+				1ADDCE5D53DBC0BAA578F1A18895BA37 /* CCHMapTreeUtils.h */,
+				589CF59E1926D1CF6EF5865F6FCBC351 /* CCHMapTreeUtils.m */,
+				E12EBE3C050CDC5568870BE0FB48FD0F /* CCHMapViewDelegateProxy.h */,
+				24561610F4E4C7E9EB9A4511C931C648 /* CCHMapViewDelegateProxy.m */,
+				3FEC7F070336B0469D8EB99BB3E10EFE /* CCHNearCenterMapClusterer.h */,
+				4245F1E00CDB96D280CC6BC17C484735 /* CCHNearCenterMapClusterer.m */,
+				3464072B9CB4ACF395B7AC84E971C0B4 /* Support Files */,
+			);
+			name = CCHMapClusterController;
+			path = CCHMapClusterController;
+			sourceTree = "<group>";
+		};
+		DB68C81BE75B08EA5A758AE0747B98C7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B50D0E4CC58A35391F219EB30F10BF3D /* CCHMapClusterController */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F2C09441925FBD234A844D93CE86C31B /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3C2A5B71D187BB0C5D2E1117B2CFEB1B /* Pods-Photo&Camera */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A1BBB319B3A60E8F26441D0433FFC39A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D7CA533670863EBEE0E1A1C13E5CB5D /* CCHCenterOfMassMapClusterer.h in Headers */,
+				BB2B6B5F4F81A9A653237857B4249F4E /* CCHFadeInOutMapAnimator.h in Headers */,
+				3A6AAD39026480D60D8E8F319087986E /* CCHMapAnimator.h in Headers */,
+				9F61D119DEC1E5CABB07E3DB33135FD7 /* CCHMapClusterAnnotation.h in Headers */,
+				CB7CF9DF2BBA756102580162254ABD18 /* CCHMapClusterController.h in Headers */,
+				4DAD13E0A1C249697FE9D378A086CC6B /* CCHMapClusterControllerDebugPolygon.h in Headers */,
+				E2511F0EAC2917648467754B7B8FF488 /* CCHMapClusterControllerDelegate.h in Headers */,
+				D3F1DCA17A9C27F8960698EF75B9CD9F /* CCHMapClusterControllerUtils.h in Headers */,
+				23A10301F8CE3CF9D057F0E2BF4376FE /* CCHMapClusterer.h in Headers */,
+				E93D6FCC45D7E173A5AE54F80ABDECC7 /* CCHMapClusterOperation.h in Headers */,
+				28A86CBE6B26746DCE464FD498B93880 /* CCHMapTree.h in Headers */,
+				A87766FAD5C707664A15050CE6994840 /* CCHMapTreeUtils.h in Headers */,
+				B1B7868E70947735F9A5CFDD135ABA7E /* CCHMapViewDelegateProxy.h in Headers */,
+				CD8F7E96AEE4FA632A5594DD466BCC39 /* CCHNearCenterMapClusterer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8AF6C0377DFBD38C67FF822B2B60BADA /* Pods-Photo&Camera */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E465E1CB0FB2A6809E980FE7072EA111 /* Build configuration list for PBXNativeTarget "Pods-Photo&Camera" */;
+			buildPhases = (
+				8E6130739FAEDE1DDC8ED46C225256FB /* Sources */,
+				88093E4F2104983F3B1669569F55FC5A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCA2495662F99CA917E104A132FB12AA /* PBXTargetDependency */,
+			);
+			name = "Pods-Photo&Camera";
+			productName = "Pods-Photo&Camera";
+			productReference = E0DCEDD98FF15E625065E1440E848BB7 /* libPods-Photo&Camera.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		D252272B13D2E7AD51A8F92A418C5EB3 /* CCHMapClusterController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B929AB50989CD4C8904EF53136DCF07B /* Build configuration list for PBXNativeTarget "CCHMapClusterController" */;
+			buildPhases = (
+				87FA83DB8CD0AB60121398C63D804B1D /* Sources */,
+				5EBDF2136F5318E245330586EC398A33 /* Frameworks */,
+				A1BBB319B3A60E8F26441D0433FFC39A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CCHMapClusterController;
+			productName = CCHMapClusterController;
+			productReference = E7F1EDD47E7DAA465FD80273A60BA37C /* libCCHMapClusterController.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 552510B9DB917ABF79C6C0846488B4B8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D252272B13D2E7AD51A8F92A418C5EB3 /* CCHMapClusterController */,
+				8AF6C0377DFBD38C67FF822B2B60BADA /* Pods-Photo&Camera */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		87FA83DB8CD0AB60121398C63D804B1D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				014C39697A9B8A6E4E4333C39E24292B /* CCHCenterOfMassMapClusterer.m in Sources */,
+				9DA73634923DA9CB7CCFC40F81D9DFDB /* CCHFadeInOutMapAnimator.m in Sources */,
+				53552F01087F54AFF8EA195101A926E7 /* CCHMapClusterAnnotation.m in Sources */,
+				58F417E9D8FA191243077AEC7CC5F583 /* CCHMapClusterController-dummy.m in Sources */,
+				03D51ACBA285510A55D84C762AD3F9C0 /* CCHMapClusterController.m in Sources */,
+				2447B9539F68734078BA344CADFF8EC7 /* CCHMapClusterControllerDebugPolygon.m in Sources */,
+				43849B791AF8BBC296C364A19A2E9DF1 /* CCHMapClusterControllerUtils.m in Sources */,
+				92E1810B76C63DFDAE93B81708E6DA61 /* CCHMapClusterOperation.m in Sources */,
+				37741FB9348B5489D440CD195E9C8823 /* CCHMapTree.m in Sources */,
+				D14618AB6214C8C5F2F8041035431B9C /* CCHMapTreeUtils.m in Sources */,
+				90E127B20E651F224DE641C9D16489E7 /* CCHMapViewDelegateProxy.m in Sources */,
+				5D70EC70E5A9C0C52AACEC420D24B27B /* CCHNearCenterMapClusterer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E6130739FAEDE1DDC8ED46C225256FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D4E72DFED127A65F0A538E5D2DBA470 /* Pods-Photo&Camera-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DCA2495662F99CA917E104A132FB12AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CCHMapClusterController;
+			target = D252272B13D2E7AD51A8F92A418C5EB3 /* CCHMapClusterController */;
+			targetProxy = 5808F3B8101BF8D353D0021906E829D0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		12914D756594D15C6F2CA12FE5F89F1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		3BFDCDE5ABA452F3A9AF6ADCCCBCC3D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 359A51CD06AEFE1982857D643632177F /* Pods-Photo&Camera.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		4930F794DD13DA5FB1992D8FB97F3C26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1548B106C486E3ECB24AA9C626FD4A6D /* Pods-Photo&Camera.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		77278FF6AF2D7E9BA16443BD5F5F6189 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58141456E97ABCE213BA607E78295DE2 /* CCHMapClusterController.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CCHMapClusterController/CCHMapClusterController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		CBEA6DD04FB791A4BCDD90FF7CB3812B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58141456E97ABCE213BA607E78295DE2 /* CCHMapClusterController.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CCHMapClusterController/CCHMapClusterController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		E72E7977875C2D251FC62736BBDDC389 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12914D756594D15C6F2CA12FE5F89F1B /* Debug */,
+				E72E7977875C2D251FC62736BBDDC389 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B929AB50989CD4C8904EF53136DCF07B /* Build configuration list for PBXNativeTarget "CCHMapClusterController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBEA6DD04FB791A4BCDD90FF7CB3812B /* Debug */,
+				77278FF6AF2D7E9BA16443BD5F5F6189 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E465E1CB0FB2A6809E980FE7072EA111 /* Build configuration list for PBXNativeTarget "Pods-Photo&Camera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4930F794DD13DA5FB1992D8FB97F3C26 /* Debug */,
+				3BFDCDE5ABA452F3A9AF6ADCCCBCC3D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
