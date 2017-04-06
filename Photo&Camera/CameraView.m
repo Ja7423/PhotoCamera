@@ -13,10 +13,10 @@
         Camera *camera;
 }
 
-@property (strong, nonatomic)Button *ShutterButton;
-@property (strong, nonatomic)Button *FlashButton;
-@property (strong, nonatomic)Button *SwitchButton;
-@property (strong, nonatomic)Button *CancelButton;
+@property (strong, nonatomic)Button *shutterButton;
+@property (strong, nonatomic)Button *flashButton;
+@property (strong, nonatomic)Button *switchButton;
+@property (strong, nonatomic)Button *cancelButton;
 
 @end
 
@@ -55,40 +55,40 @@
 
 - (void)setupUserInterface
 {
-        self.ShutterButton = [[Button alloc]init];
-        self.ShutterButton.frame = (CGRect){0, 0, self.bounds.size.width * 0.21, self.bounds.size.width * 0.21};
-        self.ShutterButton.center = CGPointMake(self.frame.size.width * 0.5, self.frame.size.height*0.875);
-        self.ShutterButton.tag = ShutterButtonTag;
-        self.ShutterButton.backgroundColor = [UIColor clearColor];
-        [self.ShutterButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:self.ShutterButton];
+        self.shutterButton = [[Button alloc]init];
+        self.shutterButton.frame = (CGRect){0, 0, self.bounds.size.width * 0.21, self.bounds.size.width * 0.21};
+        self.shutterButton.center = CGPointMake(self.frame.size.width * 0.5, self.frame.size.height*0.875);
+        self.shutterButton.tag = ShutterButtonTag;
+        self.shutterButton.backgroundColor = [UIColor clearColor];
+        [self.shutterButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:self.shutterButton];
         
         
-        self.FlashButton = [[Button alloc]init];
-        self.FlashButton.frame = (CGRect){0, 0, self.bounds.size.width * 0.10, self.bounds.size.width * 0.10};
-        self.FlashButton.center = CGPointMake(self.frame.size.width * 0.90, self.frame.size.height*0.10);
-        self.FlashButton.tag = FlashButtonTag;
-        self.FlashButton.backgroundColor = [UIColor clearColor];
-        [self.FlashButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:self.FlashButton];
+        self.flashButton = [[Button alloc]init];
+        self.flashButton.frame = (CGRect){0, 0, self.bounds.size.width * 0.10, self.bounds.size.width * 0.10};
+        self.flashButton.center = CGPointMake(self.frame.size.width * 0.90, self.frame.size.height*0.10);
+        self.flashButton.tag = FlashButtonTag;
+        self.flashButton.backgroundColor = [UIColor clearColor];
+        [self.flashButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:self.flashButton];
         
         
-        self.SwitchButton = [[Button alloc]init];
-        self.SwitchButton.frame = (CGRect){0, 0, self.bounds.size.width * 0.10, self.bounds.size.width * 0.10};
-        self.SwitchButton.center = CGPointMake(self.frame.size.width *0.90, self.frame.size.height*0.925);
-        self.SwitchButton.tag = SwitchButtonTag;
-        self.SwitchButton.backgroundColor = [UIColor clearColor];
-        [self.SwitchButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:self.SwitchButton];
+        self.switchButton = [[Button alloc]init];
+        self.switchButton.frame = (CGRect){0, 0, self.bounds.size.width * 0.10, self.bounds.size.width * 0.10};
+        self.switchButton.center = CGPointMake(self.frame.size.width *0.90, self.frame.size.height*0.925);
+        self.switchButton.tag = SwitchButtonTag;
+        self.switchButton.backgroundColor = [UIColor clearColor];
+        [self.switchButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:self.switchButton];
         
         
-        self.CancelButton = [[Button alloc]init];
-        self.CancelButton.frame = (CGRect){0, 0, self.bounds.size.width * 0.10, self.bounds.size.width * 0.10};
-        self.CancelButton.center = CGPointMake(self.frame.size.width *0.10, self.frame.size.height*0.10);
-        self.CancelButton.tag = CancelButtonTag;
-        self.CancelButton.backgroundColor = [UIColor clearColor];
-        [self.CancelButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:self.CancelButton];
+        self.cancelButton = [[Button alloc]init];
+        self.cancelButton.frame = (CGRect){0, 0, self.bounds.size.width * 0.10, self.bounds.size.width * 0.10};
+        self.cancelButton.center = CGPointMake(self.frame.size.width *0.10, self.frame.size.height*0.10);
+        self.cancelButton.tag = CancelButtonTag;
+        self.cancelButton.backgroundColor = [UIColor clearColor];
+        [self.cancelButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:self.cancelButton];
 }
 
 - (IBAction)buttonClick:(UIButton *)sender
@@ -103,10 +103,6 @@
                                 }];
                         } );
                 }];
-        }
-        else if (sender.tag == FlashButtonTag)
-        {
-                
         }
         else if (sender.tag == SwitchButtonTag)
         {
