@@ -45,16 +45,16 @@
 
 - (IBAction)GoToCamera:(id)sender {
         
-        CameraViewController * cameraVC = [[CameraViewController alloc]init];
-        [self presentViewController:cameraVC animated:YES completion:nil];
+        CameraViewController *CameraVC = [[CameraViewController alloc]init];
+        [self presentViewController:CameraVC animated:YES completion:nil];
 }
 
 
 - (IBAction)GoToPhoto:(id)sender {
         
-        AlbumTableViewController *albumVC = [[AlbumTableViewController alloc]init];
-        UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:albumVC];
-        [self presentViewController:navigationController animated:YES completion:nil];
+        AlbumTableViewController *AlbumVC = [[AlbumTableViewController alloc]init];
+        UINavigationController *NavigationController = [[UINavigationController alloc]initWithRootViewController:AlbumVC];
+        [self presentViewController:NavigationController animated:YES completion:nil];
 }
 
 @end

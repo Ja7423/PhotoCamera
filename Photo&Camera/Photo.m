@@ -138,15 +138,8 @@
 /* choose which album you need */
 - (BOOL)selectAlbum:(NSString *)albumName
 {
-        if ([albumName isEqualToString:@"All Photos"] ||
-            [albumName isEqualToString:@"Favorites"] ||
-            [albumName isEqualToString:@"Videos"] ||
-            [albumName isEqualToString:@"Selfies"] )
-        {
-                return YES;
-        }
-
-        return NO;
+        NSArray * albums = @[@"All Photos", @"Favorites", @"Videos", @"Selfies"];
+        return [albums containsObject:albumName];
 }
 
 #pragma mark - Asset change

@@ -39,12 +39,6 @@
         return self;
 }
 
-//- (void)getPreviewView
-//{
-//        [camera setPreviewLayerSize:self.bounds];
-//        [self.layer addSublayer:camera.previewLayer];
-//}
-
 - (void)setupUserInterface
 {
         self.shutterButton = [[Button alloc]init];
