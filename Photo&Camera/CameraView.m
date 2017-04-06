@@ -9,9 +9,6 @@
 #import "CameraView.h"
 
 @interface CameraView ()
-{
-        Camera *camera;
-}
 
 @property (strong, nonatomic)Button *shutterButton;
 @property (strong, nonatomic)Button *flashButton;
@@ -27,13 +24,8 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
     // Drawing code
-        
-        camera = [Camera sharedInstance];
-        [self getPreviewView];
+
         [self setupUserInterface];
-        
-        [camera launchCamera];
-        
 }
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -47,11 +39,11 @@
         return self;
 }
 
-- (void)getPreviewView
-{
-        [camera setPreviewLayerSize:self.bounds];
-        [self.layer addSublayer:camera.previewLayer];
-}
+//- (void)getPreviewView
+//{
+//        [camera setPreviewLayerSize:self.bounds];
+//        [self.layer addSublayer:camera.previewLayer];
+//}
 
 - (void)setupUserInterface
 {
@@ -62,15 +54,6 @@
         self.shutterButton.backgroundColor = [UIColor clearColor];
         [self.shutterButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:self.shutterButton];
-        
-        
-        self.flashButton = [[Button alloc]init];
-        self.flashButton.frame = (CGRect){0, 0, self.bounds.size.width * 0.10, self.bounds.size.width * 0.10};
-        self.flashButton.center = CGPointMake(self.frame.size.width * 0.90, self.frame.size.height*0.10);
-        self.flashButton.tag = FlashButtonTag;
-        self.flashButton.backgroundColor = [UIColor clearColor];
-        [self.flashButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:self.flashButton];
         
         
         self.switchButton = [[Button alloc]init];
@@ -93,29 +76,9 @@
 
 - (IBAction)buttonClick:(UIButton *)sender
 {
-        if (sender.tag == ShutterButtonTag)
+        if ([_delegate respondsToSelector:@selector(cameraView:didClickButton:)])
         {
-                [camera capturePictureWithAnimation:^{
-                        dispatch_async( dispatch_get_main_queue(), ^{
-                                self.layer.opacity = 0.0;
-                                [UIView animateWithDuration:0.25 animations:^{
-                                        self.layer.opacity = 1.0;
-                                }];
-                        } );
-                }];
-        }
-        else if (sender.tag == SwitchButtonTag)
-        {
-                [camera switchCameraWithAnimation:^{
-                        dispatch_async(dispatch_get_main_queue(), ^{
-                                [UIView transitionWithView:self duration:0.5 options:UIViewAnimationOptionTransitionFlipFromLeft animations:nil completion:nil];
-                        });
-                }];
-        }
-        else if (sender.tag == CancelButtonTag)
-        {
-                [camera closeCamera];
-                [self removeFromSuperview];
+                [_delegate cameraView:self didClickButton:sender];
         }
 }
 

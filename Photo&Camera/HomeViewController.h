@@ -7,10 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Camera.h"
-#import "CameraView.h"
-#import "Photo.h"
-#import "AlbumTableViewController.h"
+
 
 @interface HomeViewController : UIViewController
 

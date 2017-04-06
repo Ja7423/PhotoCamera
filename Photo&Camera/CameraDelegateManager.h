@@ -15,7 +15,7 @@
 @protocol CameraDelegate <NSObject>
 
 @optional
-- (void)CameraDelegate:(CameraDelegateManager *)CameraDelegateManager didFinishCapturePhoto:(NSData *)photoData withError:(NSError *)error;
+- (void)CameraDelegate:(CameraDelegateManager *)cameraDelegateManager didFinishCapturePhoto:(NSData *)photoData withError:(NSError *)error;
 
 @end
 

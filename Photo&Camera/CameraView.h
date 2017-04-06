@@ -11,6 +11,16 @@
 #import "Button.h"
 #import "Define.h"
 
+@class CameraView;
+@protocol CameraViewDelegate <NSObject>
+
+@optional
+- (void)cameraView:(CameraView *)cameraView didClickButton:(UIButton *)button;
+
+@end
+
 @interface CameraView : UIView
+
+@property (weak, nonatomic) id <CameraViewDelegate> delegate;
 
 @end

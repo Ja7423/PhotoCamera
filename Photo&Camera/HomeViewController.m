@@ -7,11 +7,12 @@
 //
 
 #import "HomeViewController.h"
+#import "Photo.h"
+#import "AlbumTableViewController.h"
+#import "CameraViewController.h"
 
 @interface HomeViewController ()
-{
-        CameraView * _cameraview;
-}
+
 
 @end
 
@@ -44,17 +45,16 @@
 
 - (IBAction)GoToCamera:(id)sender {
         
-        [Camera CheckCameraIsAvailable];
-        _cameraview = [[CameraView alloc]initWithFrame:self.view.bounds];
-        [self.view addSubview:_cameraview];
+        CameraViewController * cameraVC = [[CameraViewController alloc]init];
+        [self presentViewController:cameraVC animated:YES completion:nil];
 }
 
 
 - (IBAction)GoToPhoto:(id)sender {
         
-        AlbumTableViewController *AlbumVC = [[AlbumTableViewController alloc]init];
-        UINavigationController *NavigationController = [[UINavigationController alloc]initWithRootViewController:AlbumVC];
-        [self presentViewController:NavigationController animated:YES completion:nil];
+        AlbumTableViewController *albumVC = [[AlbumTableViewController alloc]init];
+        UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:albumVC];
+        [self presentViewController:navigationController animated:YES completion:nil];
 }
 
 @end

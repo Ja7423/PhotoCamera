@@ -18,6 +18,7 @@
 		A9088DBF1DC9CDD800430CAC /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = A9088DBE1DC9CDD800430CAC /* Photo.m */; };
 		A9088DC21DC9CDE100430CAC /* Camera.m in Sources */ = {isa = PBXBuildFile; fileRef = A9088DC11DC9CDE100430CAC /* Camera.m */; };
 		A93596381DD1DA2400ABE175 /* CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = A93596371DD1DA2400ABE175 /* CameraView.m */; };
+		A95638CE1E960F7C00A4BF96 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A95638CD1E960F7C00A4BF96 /* CameraViewController.m */; };
 		A961E3861DF1A7FA00EBDD10 /* PhotoPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A961E3851DF1A7FA00EBDD10 /* PhotoPickerViewController.m */; };
 		A9A3E13B1DC9D31F0009CBC6 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A3E1391DC9D31F0009CBC6 /* Photos.framework */; };
 		A9A3E13C1DC9D31F0009CBC6 /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A3E13A1DC9D31F0009CBC6 /* PhotosUI.framework */; };
@@ -61,6 +62,8 @@
 		A9088DC11DC9CDE100430CAC /* Camera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Camera.m; sourceTree = "<group>"; };
 		A93596361DD1DA2400ABE175 /* CameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraView.h; sourceTree = "<group>"; };
 		A93596371DD1DA2400ABE175 /* CameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraView.m; sourceTree = "<group>"; };
+		A95638CC1E960F7C00A4BF96 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		A95638CD1E960F7C00A4BF96 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		A961E3841DF1A7FA00EBDD10 /* PhotoPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoPickerViewController.h; sourceTree = "<group>"; };
 		A961E3851DF1A7FA00EBDD10 /* PhotoPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoPickerViewController.m; sourceTree = "<group>"; };
 		A9A3E1391DC9D31F0009CBC6 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
@@ -191,6 +194,8 @@
 		A93596391DD3017900ABE175 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
+				A95638CC1E960F7C00A4BF96 /* CameraViewController.h */,
+				A95638CD1E960F7C00A4BF96 /* CameraViewController.m */,
 				A93596361DD1DA2400ABE175 /* CameraView.h */,
 				A93596371DD1DA2400ABE175 /* CameraView.m */,
 				A9088DC01DC9CDE100430CAC /* Camera.h */,
@@ -387,6 +392,7 @@
 				A9D032141E27914100CAB134 /* PhotoPreviewViewController.m in Sources */,
 				A9C219401E2F685500248D8C /* PhotoMapAnnotationView.m in Sources */,
 				A93596381DD1DA2400ABE175 /* CameraView.m in Sources */,
+				A95638CE1E960F7C00A4BF96 /* CameraViewController.m in Sources */,
 				A9D01DC41DE2FD4500675E23 /* Define.m in Sources */,
 				A9EF47221DF40E1700054129 /* AlbumTableViewCell.m in Sources */,
 				A9088DA61DC8991600430CAC /* AppDelegate.m in Sources */,
